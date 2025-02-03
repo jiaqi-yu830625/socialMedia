@@ -1,0 +1,9 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2025020301_init
+      author: yujiaqi
+      changes:
+        - sqlFile:
+            encoding: utf8
+            path: classpath:db.changelog/mysql/2025020301_init.sql
+      comment: init tables

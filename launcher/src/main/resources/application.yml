@@ -1,0 +1,48 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://localhost:3306/socialMedia?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&autoReconnect=true&useSSL=false
+    url: jdbc:mysql://localhost:3306/socialMedia?useSSL=false&serverTimezone=UTC
+    username: root
+    password: yujiaqi0830
+    hikari:
+      idle-timeout: 60000
+      maximum-pool-size: 30
+      minimum-idle: 10
+  redis:
+    database: 8
+    host: 127.0.0.1
+    port: 6379
+  liquibase:
+    enabled: true
+    change-log: classpath:db.changelog/changelog-system.yaml
+  servlet:
+    multipart:
+      max-file-size: 500MB
+      max-request-size: 500MB
+
+mybatis-plus:
+  typeEnumsPackage: ncl.yujiaqi.**.common.enums
+  global-config:
+    db-config:
+      logic-delete-field: deleted
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+
+logging:
+  level:
+    ncl.yujiaqi:
+      system.mapper: debug
+      system.domain.rdo: debug
+    org.springframework.data.convert.CustomConversions: ERROR
+    io.swagger.models.parameters.AbstractSerializableParameter: error
+
+swagger:
+  enabled: true
+  config:
+    login: true
+    username:
+    password:
+
+task:
+  enabled: true
