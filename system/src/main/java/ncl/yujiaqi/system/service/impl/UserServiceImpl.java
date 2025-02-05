@@ -15,6 +15,7 @@ import ncl.yujiaqi.system.service.RoleService;
 import ncl.yujiaqi.system.service.UserRoleService;
 import ncl.yujiaqi.system.service.UserService;
 import ncl.yujiaqi.system.util.JwtTokenUtils;
+import ncl.yujiaqi.system.util.LoginUtils;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -102,14 +103,22 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
 
     @Override
     public boolean updatePassword(Long id, String password) {
-        //todo
-        return false;
+        User user = getById(id);
+        if (user == null) {
+            throw SMException.build(ResultEnum.DATA_NOT_FOUND, "user not exist!");
+        }
+        user.setPassword(passwordEncoder.encode(password));
+        return save(user);
     }
 
+    /**
+     * get user by token
+
+     * @return user
+     */
     @Override
-    public User getCurrentUser() {
-        //todo
-        return null;
+    public UserDTO getCurrentUser() {
+        return LoginUtils.getUserDTO();
     }
 
     @Override

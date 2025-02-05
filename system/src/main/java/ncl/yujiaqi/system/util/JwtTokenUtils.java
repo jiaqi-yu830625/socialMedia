@@ -47,6 +47,7 @@ public class JwtTokenUtils {
         claim.put("USERID", user.getId());
         claim.put("EMAIL", user.getEmail());
         claim.put("PHONE", user.getPhone());
+        claim.put("userDTO", user);
         JwtBuilder jwtBuilder = Jwts.builder()
                 .setClaims(claim)
                 .setIssuedAt(new Date(System.currentTimeMillis()))

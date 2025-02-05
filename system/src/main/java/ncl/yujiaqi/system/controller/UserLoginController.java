@@ -4,10 +4,12 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import ncl.yujiaqi.system.common.result.R;
 import ncl.yujiaqi.system.domain.dto.LoginDTO;
+import ncl.yujiaqi.system.domain.dto.UserDTO;
 import ncl.yujiaqi.system.domain.dto.UserTokenDTO;
-import ncl.yujiaqi.system.domain.entity.User;
 import ncl.yujiaqi.system.service.UserService;
 import org.springframework.web.bind.annotation.*;
+
+import javax.annotation.Resource;
 
 /**
  * @Author yujiaqi
@@ -17,6 +19,7 @@ import org.springframework.web.bind.annotation.*;
 @Api(value = "user table", tags = "user table")
 @RequestMapping("/login")
 public class UserLoginController {
+    @Resource
     private UserService userService;
 
     @PostMapping("/login")
@@ -28,7 +31,7 @@ public class UserLoginController {
 
     @GetMapping(value = "/getCurrentUser")
     @ApiOperation(value = "get current user")
-    public R<User> getCurrentUser() {
+    public R<UserDTO> getCurrentUser() {
         return R.success(userService.getCurrentUser());
     }
 }

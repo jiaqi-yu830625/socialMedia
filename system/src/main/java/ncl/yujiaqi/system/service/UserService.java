@@ -25,7 +25,7 @@ public interface UserService extends IService<User> {
 
     boolean updatePassword(Long id, String password);
 
-    User getCurrentUser();
+    UserDTO getCurrentUser();
 
     UserDTO convert(User user);
 }
