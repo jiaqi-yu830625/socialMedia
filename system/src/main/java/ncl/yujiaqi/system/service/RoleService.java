@@ -17,4 +17,6 @@ public interface RoleService extends IService<Role> {
     Role update(Role role);
 
     Boolean delete(Long id);
+
+    Role getByName(String name);
 }

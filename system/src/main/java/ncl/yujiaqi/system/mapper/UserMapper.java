@@ -2,6 +2,9 @@ package ncl.yujiaqi.system.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import ncl.yujiaqi.system.domain.entity.User;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 /**
  * <p>
@@ -13,4 +16,7 @@ import ncl.yujiaqi.system.domain.entity.User;
  */
 public interface UserMapper extends BaseMapper<User> {
 
+    User selectByAccountAndPwd(@Param("account") String account, @Param("pwd") String password);
+
+    List<User> selectByAccount(@Param("email") String email, @Param("phone") String phone);
 }

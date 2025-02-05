@@ -11,5 +11,12 @@
         <result column="user_id" property="userId"/>
         <result column="role_id" property="roleId"/>
     </resultMap>
+    <select id="selectByUserId" resultType="ncl.yujiaqi.system.domain.entity.Role">
+        select *
+        from userRole
+        where deleted = 0
+          and user_id = ${userId}
+    </select>
+
 
 </mapper>

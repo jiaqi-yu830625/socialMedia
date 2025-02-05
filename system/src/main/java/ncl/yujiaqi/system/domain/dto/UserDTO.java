@@ -1,30 +1,23 @@
-package ncl.yujiaqi.system.domain.entity;
+package ncl.yujiaqi.system.domain.dto;
 
-import com.baomidou.mybatisplus.annotation.TableName;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
+import ncl.yujiaqi.system.domain.entity.BaseEntity;
+import ncl.yujiaqi.system.domain.entity.Role;
 
-import javax.validation.constraints.NotEmpty;
 import java.util.Date;
+import java.util.List;
 
 /**
- * user table
- *
- * @author yujiaqi
- * @since 2025-02-03
+ * @Author yujiaqi
+ * @Since 04/02/2025
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
 @Accessors(chain = true)
-@TableName(value = "user", autoResultMap = true)
-@ApiModel(value = "User", description = "user table")
-public class User extends BaseEntity {
-
-    private static final long serialVersionUID = 1L;
-
+public class UserDTO extends BaseEntity {
     @ApiModelProperty(value = "username")
     private String username;
 
@@ -52,5 +45,5 @@ public class User extends BaseEntity {
     @ApiModelProperty(value = "personal bio")
     private String bio;
 
-
+    private List<Role> roles;
 }

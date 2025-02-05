@@ -32,4 +32,9 @@ public class RoleServiceImpl extends ServiceImpl<RoleMapper, Role> implements Ro
     public Boolean delete(Long id) {
         return baseMapper.deleteById(id) > 0;
     }
+
+    @Override
+    public Role getByName(String name) {
+        return baseMapper.getByName(name);
+    }
 }

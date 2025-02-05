@@ -36,6 +36,7 @@
         <org.junit.platform.version>1.9.2</org.junit.platform.version>
         <org.projectlombok.lombok.version>1.18.12</org.projectlombok.lombok.version>
         <org.liquibase.version>3.8.9</org.liquibase.version>
+        <org.yaml.snakeyaml.version>2.0</org.yaml.snakeyaml.version>
     </properties>
 
     <dependencies>

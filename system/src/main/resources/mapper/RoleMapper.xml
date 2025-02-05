@@ -10,5 +10,10 @@
         <result column="deleted" property="deleted"/>
         <result column="name" property="name"/>
     </resultMap>
-
+    <select id="getByName" resultType="ncl.yujiaqi.system.domain.entity.Role">
+        select *
+        from role
+        where deleted = 0
+          and
+    </select>
 </mapper>

@@ -1,7 +1,12 @@
 package ncl.yujiaqi.system.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import ncl.yujiaqi.system.domain.entity.Role;
 import ncl.yujiaqi.system.domain.entity.UserRole;
+import org.springframework.data.repository.query.Param;
+
+import java.util.List;
+import java.util.Set;
 
 /**
  * <p>
@@ -13,4 +18,5 @@ import ncl.yujiaqi.system.domain.entity.UserRole;
  */
 public interface UserRoleMapper extends BaseMapper<UserRole> {
 
+    List<Role> selectByUserId(@Param("userId") Long userId);
 }
