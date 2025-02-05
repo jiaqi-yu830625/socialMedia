@@ -1,0 +1,20 @@
+package ncl.yujiaqi.dynamic.service;
+
+import ncl.yujiaqi.dynamic.domain.entity.PostLikes;
+import com.baomidou.mybatisplus.extension.service.IService;
+
+/**
+ * post likes table
+ *
+ * @author yujiaqi
+ * @since 2025-02-05
+ */
+public interface PostLikesService extends IService<PostLikes>  {
+
+
+    PostLikes add(PostLikes postLikes);
+
+    PostLikes update(PostLikes postLikes);
+
+    Boolean delete(Long id);
+}

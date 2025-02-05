@@ -29,5 +29,11 @@
             <artifactId>snakeyaml</artifactId>
             <version>${org.yaml.snakeyaml.version}</version>
         </dependency>
+        <dependency>
+            <groupId>ncl.yujiaqi</groupId>
+            <artifactId>system</artifactId>
+            <version>1.0.0</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 </project>
