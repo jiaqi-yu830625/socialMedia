@@ -6,6 +6,10 @@ import ncl.yujiaqi.dynamic.service.PostImgService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * post image table
  *
@@ -31,5 +35,28 @@ public class PostImgServiceImpl extends ServiceImpl<PostImgMapper, PostImg> impl
     @Override
     public Boolean delete(Long id) {
         return baseMapper.deleteById(id) > 0;
+    }
+
+    @Override
+    @Transactional
+    public List<PostImg> addList(Long postId, List<String> imageList) {
+        List<PostImg> imgs = new ArrayList<>(imageList.size());
+        imageList.forEach(img -> {
+            PostImg postImg = new PostImg(postId, img);
+            add(postImg);
+            imgs.add(postImg);
+        });
+        return imgs;
+    }
+
+    @Override
+    public List<PostImg> selectByPostIds(List<Long> postIds) {
+        return baseMapper.selectByPostIds(postIds);
+    }
+
+    @Override
+    public List<PostImg> selectByPostId(Long postId) {
+        return baseMapper.selectByPostId(postId);
+
     }
 }

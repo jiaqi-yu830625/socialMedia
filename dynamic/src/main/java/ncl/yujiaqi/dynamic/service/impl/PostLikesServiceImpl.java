@@ -6,6 +6,8 @@ import ncl.yujiaqi.dynamic.service.PostLikesService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * post likes table
  *
@@ -31,5 +33,15 @@ public class PostLikesServiceImpl extends ServiceImpl<PostLikesMapper, PostLikes
     @Override
     public Boolean delete(Long id) {
         return baseMapper.deleteById(id) > 0;
+    }
+
+    @Override
+    public List<PostLikes> selectByPostIds(List<Long> postIds) {
+        return baseMapper.selectByPostIds(postIds);
+    }
+
+    @Override
+    public List<PostLikes> selectByPostId(Long postId) {
+        return baseMapper.selectByPostId(postId);
     }
 }

@@ -2,6 +2,9 @@ package ncl.yujiaqi.dynamic.mapper;
 
 import ncl.yujiaqi.dynamic.domain.entity.PostLikes;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.springframework.data.repository.query.Param;
+
+import java.util.List;
 
 /**
  * <p>
@@ -13,4 +16,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  */
 public interface PostLikesMapper extends BaseMapper<PostLikes> {
 
+    List<PostLikes> selectByPostIds(@Param("postIds") List<Long> postIds);
+
+    List<PostLikes> selectByPostId(@Param("postId")Long postId);
 }

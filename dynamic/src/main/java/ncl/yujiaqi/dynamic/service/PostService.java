@@ -1,7 +1,10 @@
 package ncl.yujiaqi.dynamic.service;
 
+import ncl.yujiaqi.dynamic.domain.dto.PostDTO;
 import ncl.yujiaqi.dynamic.domain.entity.Post;
 import com.baomidou.mybatisplus.extension.service.IService;
+
+import java.util.List;
 
 /**
  * post table
@@ -12,9 +15,15 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface PostService extends IService<Post>  {
 
 
-    Post add(Post post);
+    PostDTO add(PostDTO postDto);
 
     Post update(Post post);
 
     Boolean delete(Long id);
+
+    List<PostDTO> getByUserId(Long userId);
+
+    List<PostDTO> pageByUserId(Long userId);
+
+    PostDTO selectById(Long id);
 }

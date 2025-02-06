@@ -2,6 +2,9 @@ package ncl.yujiaqi.dynamic.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import ncl.yujiaqi.dynamic.domain.entity.PostComment;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 /**
  * <p>
@@ -13,4 +16,7 @@ import ncl.yujiaqi.dynamic.domain.entity.PostComment;
  */
 public interface PostCommentMapper extends BaseMapper<PostComment> {
 
+    List<PostComment> selectByPostIds(@Param("postIds") List<Long> postIds);
+
+    List<PostComment> selectByPostId(@Param("postId")Long postId);
 }

@@ -11,5 +11,20 @@
         <result column="user_id" property="userId"/>
         <result column="post_id" property="postId"/>
     </resultMap>
+    <select id="selectByPostIds" resultType="ncl.yujiaqi.dynamic.domain.entity.PostLikes">
+        select *
+        from dyn_post_likes
+        where deleted = 0
+        and post_id in
+        <foreach collection="postIds" index="postId" item="postId" open="(" close=")" separator=",">
+            #{postId}
+        </foreach>
+    </select>
+    <select id="selectByPostId" resultType="ncl.yujiaqi.dynamic.domain.entity.PostLikes">
+        select *
+        from dyn_post_likes
+        where deleted = 0
+          and post_id = ${postId}
+    </select>
 
 </mapper>

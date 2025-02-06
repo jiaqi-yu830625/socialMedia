@@ -5,14 +5,14 @@ import io.swagger.annotations.Api;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * post image table controller
+ * user follows table controller
  *
  * @author yujiaqi
  * @since 2025-02-05
  */
 @RestController
-@Api(value = "post image table", tags = "post image table")
-@RequestMapping("/dyn_post_img")
-public class DynPostImgController {
+@Api(value = "user follows table", tags = "user follows table")
+@RequestMapping("/dyn_user_follows")
+public class UserFollowsController {
 
 }

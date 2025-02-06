@@ -1,7 +1,10 @@
 package ncl.yujiaqi.dynamic.mapper;
 
-import ncl.yujiaqi.dynamic.domain.entity.Post;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import ncl.yujiaqi.dynamic.domain.entity.Post;
+import org.springframework.data.repository.query.Param;
+
+import java.util.List;
 
 /**
  * <p>
@@ -13,4 +16,5 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  */
 public interface PostMapper extends BaseMapper<Post> {
 
+    List<Post> getByUserId(@Param("userId") Long userId);
 }

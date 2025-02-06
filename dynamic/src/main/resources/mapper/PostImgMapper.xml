@@ -12,4 +12,21 @@
         <result column="url" property="url"/>
     </resultMap>
 
+    <select id="selectByPostIds" resultType="ncl.yujiaqi.dynamic.domain.entity.PostImg">
+        select *
+        from dyn_post_img
+        where deleted = 0
+        and post_id in
+        <foreach collection="postIds" index="postId" open="(" close=")" separator=",">
+            #{postId}
+        </foreach>
+    </select>
+
+    <select id="selectByPostId" resultType="ncl.yujiaqi.dynamic.domain.entity.PostImg">
+        select *
+        from dyn_post_img
+        where deleted = 0
+          and post_id = ${postId}
+    </select>
+
 </mapper>

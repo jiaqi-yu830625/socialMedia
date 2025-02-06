@@ -6,6 +6,8 @@ import ncl.yujiaqi.system.domain.dto.UserDTO;
 import ncl.yujiaqi.system.domain.dto.UserTokenDTO;
 import ncl.yujiaqi.system.domain.entity.User;
 
+import java.util.List;
+
 /**
  * user table 服务类
  *
@@ -28,4 +30,5 @@ public interface UserService extends IService<User> {
     UserDTO getCurrentUser();
 
     UserDTO convert(User user);
+
 }

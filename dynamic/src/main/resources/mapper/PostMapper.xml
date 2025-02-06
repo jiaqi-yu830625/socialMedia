@@ -13,4 +13,11 @@
         <result column="visibility" property="visibility"/>
     </resultMap>
 
+    <select id="getByUserId" resultMap="BaseResultMap">
+        select *
+        from dyn_post
+        where deleted = 0
+          and user_id = ${userId}
+    </select>
+
 </mapper>

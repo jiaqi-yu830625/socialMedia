@@ -14,4 +14,21 @@
         <result column="parent_comment_id" property="parentCommentId"/>
     </resultMap>
 
+    <select id="selectByPostIds" resultType="ncl.yujiaqi.dynamic.domain.entity.PostComment">
+        select *
+        from dyn_post_comment
+        where deleted = 0
+        and post_id in
+        <foreach collection="postIds" index="postId" item="postId" open="(" close=")" separator=",">
+            #{postId}
+        </foreach>
+    </select>
+
+    <select id="selectByPostId" resultType="ncl.yujiaqi.dynamic.domain.entity.PostComment">
+        select *
+        from dyn_post_comment
+        where deleted = 0
+          and post_id = ${postId}
+    </select>
+
 </mapper>
