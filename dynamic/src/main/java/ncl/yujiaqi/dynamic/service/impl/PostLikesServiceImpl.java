@@ -44,4 +44,9 @@ public class PostLikesServiceImpl extends ServiceImpl<PostLikesMapper, PostLikes
     public List<PostLikes> selectByPostId(Long postId) {
         return baseMapper.selectByPostId(postId);
     }
+
+    @Override
+    public void deleteByPostId(Long postId) {
+        baseMapper.deleteByPostId(postId);
+    }
 }

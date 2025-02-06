@@ -101,4 +101,9 @@ public class PostCommentServiceImpl extends ServiceImpl<PostCommentMapper, PostC
         );
         return dtos;
     }
+
+    @Override
+    public void deleteByPostId(Long postId) {
+        baseMapper.deleteByPostId(postId);
+    }
 }

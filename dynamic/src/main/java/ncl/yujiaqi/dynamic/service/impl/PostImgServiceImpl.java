@@ -59,4 +59,9 @@ public class PostImgServiceImpl extends ServiceImpl<PostImgMapper, PostImg> impl
         return baseMapper.selectByPostId(postId);
 
     }
+
+    @Override
+    public void deleteByPostId(Long postId) {
+        baseMapper.deleteByPostId(postId);
+    }
 }

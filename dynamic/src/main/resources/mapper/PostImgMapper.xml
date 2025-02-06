@@ -11,6 +11,11 @@
         <result column="post_id" property="postId"/>
         <result column="url" property="url"/>
     </resultMap>
+    <select id="deleteByPostId">
+        update dyn_post_img
+        set deleted = 1
+        where post_id = ${postId}
+    </select>
 
     <select id="selectByPostIds" resultType="ncl.yujiaqi.dynamic.domain.entity.PostImg">
         select *

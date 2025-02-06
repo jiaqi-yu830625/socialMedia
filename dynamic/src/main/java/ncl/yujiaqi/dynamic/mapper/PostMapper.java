@@ -17,4 +17,6 @@ import java.util.List;
 public interface PostMapper extends BaseMapper<Post> {
 
     List<Post> getByUserId(@Param("userId") Long userId);
+
+    void delById(@Param("id") Long id);
 }

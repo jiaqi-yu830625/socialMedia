@@ -11,6 +11,11 @@
         <result column="user_id" property="userId"/>
         <result column="post_id" property="postId"/>
     </resultMap>
+    <select id="deleteByPostId">
+        update dyn_post_likes
+        set deleted = 1
+        where post_id = ${postId}
+    </select>
     <select id="selectByPostIds" resultType="ncl.yujiaqi.dynamic.domain.entity.PostLikes">
         select *
         from dyn_post_likes

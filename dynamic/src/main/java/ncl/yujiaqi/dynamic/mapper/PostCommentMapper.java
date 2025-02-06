@@ -18,5 +18,7 @@ public interface PostCommentMapper extends BaseMapper<PostComment> {
 
     List<PostComment> selectByPostIds(@Param("postIds") List<Long> postIds);
 
-    List<PostComment> selectByPostId(@Param("postId")Long postId);
+    List<PostComment> selectByPostId(@Param("postId") Long postId);
+
+    void deleteByPostId(@Param("postId") Long postId);
 }

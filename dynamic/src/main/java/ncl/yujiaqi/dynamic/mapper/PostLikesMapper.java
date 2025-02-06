@@ -18,5 +18,7 @@ public interface PostLikesMapper extends BaseMapper<PostLikes> {
 
     List<PostLikes> selectByPostIds(@Param("postIds") List<Long> postIds);
 
-    List<PostLikes> selectByPostId(@Param("postId")Long postId);
+    List<PostLikes> selectByPostId(@Param("postId") Long postId);
+
+    void deleteByPostId(@Param("postId") Long postId);
 }

@@ -15,6 +15,8 @@ import ncl.yujiaqi.dynamic.service.PostCommentService;
 import ncl.yujiaqi.dynamic.service.PostImgService;
 import ncl.yujiaqi.dynamic.service.PostLikesService;
 import ncl.yujiaqi.dynamic.service.PostService;
+import ncl.yujiaqi.system.common.enums.ResultEnum;
+import ncl.yujiaqi.system.common.exception.SMException;
 import ncl.yujiaqi.system.service.UserService;
 import org.springframework.stereotype.Service;
 
@@ -132,6 +134,28 @@ public class PostServiceImpl extends ServiceImpl<PostMapper, Post> implements Po
                 .setCommentUsers(commentUserDTOS);
 
         return postDTO;
+    }
+
+    @Override
+    @Transactional
+    public Boolean deleteById(Long id) {
+        // check post's user valid
+        Long userId = userService.getCurrentUser().getId();
+        Post post = getById(id);
+        if (!post.getUserId().equals(userId)) {
+            throw SMException.build(ResultEnum.AUTH_FAILED,"you cannot delete this post!");
+        }
+
+        // delete images
+        postImgService.deleteByPostId(id);
+        // delete likes
+        postLikesService.deleteByPostId(id);
+        // delete comments
+        postCommentService.deleteByPostId(id);
+        // delete post
+        baseMapper.delById(id);
+
+        return true;
     }
 
     public Post convertToEntity(PostDTO postDTO) {

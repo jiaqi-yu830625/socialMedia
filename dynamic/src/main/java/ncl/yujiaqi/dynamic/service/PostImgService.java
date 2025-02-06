@@ -25,4 +25,6 @@ public interface PostImgService extends IService<PostImg> {
     List<PostImg> selectByPostIds(List<Long> postIds);
 
     List<PostImg> selectByPostId(Long postId);
+
+    void deleteByPostId(Long id);
 }

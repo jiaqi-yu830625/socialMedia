@@ -19,4 +19,6 @@ public interface PostImgMapper extends BaseMapper<PostImg> {
     List<PostImg> selectByPostIds(@Param("postIds") List<Long> postIds);
 
     List<PostImg> selectByPostId(@Param("postId") Long postId);
+
+    void deleteByPostId(@Param("postId") Long postId);
 }

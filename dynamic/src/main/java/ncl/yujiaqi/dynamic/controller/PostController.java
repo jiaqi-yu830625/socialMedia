@@ -43,8 +43,14 @@ public class PostController {
 
     @GetMapping(value = "/getById/{id}")
     @ApiOperation(tags = "getById", value = "get posts by id")
-    public R<PostDTO> getById(@PathParam("id") Long id){
+    public R<PostDTO> getById(@PathParam("id") Long id) {
         return R.success(postService.selectById(id));
+    }
+
+    @PostMapping(value = "/deleteById/{id}")
+    @ApiOperation(tags = "deleteById", value = "delete post by id")
+    public R deleteById(@PathParam("id") Long id) {
+        return R.success(postService.deleteById(id));
     }
 
 }

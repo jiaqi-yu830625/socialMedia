@@ -26,4 +26,6 @@ public interface PostService extends IService<Post>  {
     List<PostDTO> pageByUserId(Long userId);
 
     PostDTO selectById(Long id);
+
+    Boolean deleteById(Long id);
 }

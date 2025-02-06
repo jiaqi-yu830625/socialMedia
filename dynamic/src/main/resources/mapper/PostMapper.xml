@@ -12,6 +12,11 @@
         <result column="content" property="content"/>
         <result column="visibility" property="visibility"/>
     </resultMap>
+    <select id="delById">
+        update dyn_post
+        set deleted = 1
+        where id = ${id}
+    </select>
 
     <select id="getByUserId" resultMap="BaseResultMap">
         select *
