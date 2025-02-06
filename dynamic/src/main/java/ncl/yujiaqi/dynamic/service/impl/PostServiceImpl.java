@@ -54,8 +54,8 @@ public class PostServiceImpl extends ServiceImpl<PostMapper, Post> implements Po
         Post post = convertToEntity(postDto);
         baseMapper.insert(post);
         // save postImages
-        if (CollectionUtil.isNotEmpty(postDto.getImageList())) {
-            postImgService.addList(post.getId(), postDto.getImageList());
+        if (CollectionUtil.isNotEmpty(postDto.getImageDataIdList())) {
+            postImgService.addList(post.getId(), postDto.getImageDataIdList());
         }
         return postDto;
     }
@@ -81,7 +81,7 @@ public class PostServiceImpl extends ServiceImpl<PostMapper, Post> implements Po
 
         List<PostDTO> dtoList = new ArrayList<>(posts.size());
         posts.forEach(post -> {
-            List<String> imgList = imgMap.get(post.getId()).stream().map(PostImg::getUrl).collect(toList());
+            List<Long> imgList = imgMap.get(post.getId()).stream().map(PostImg::getFileId).collect(toList());
             dtoList.add(new PostDTO(post.getId(), post.getUserId(), post.getContent(), imgList, post.getCreateTime()));
         });
         return dtoList;
@@ -115,7 +115,7 @@ public class PostServiceImpl extends ServiceImpl<PostMapper, Post> implements Po
         Post post = getById(id);
 
         // search images
-        List<String> postImgs = postImgService.selectByPostId(post.getId()).stream().map(PostImg::getUrl).collect(toList());
+        List<Long> postImgs = postImgService.selectByPostId(post.getId()).stream().map(PostImg::getFileId).collect(toList());
 
         // search post-likes and post-comments
         List<PostLikes> postLikes = postLikesService.selectByPostId(post.getId());

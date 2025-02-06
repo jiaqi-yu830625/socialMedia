@@ -1,5 +1,6 @@
 package ncl.yujiaqi.dynamic.service;
 
+import ncl.yujiaqi.dynamic.domain.dto.PostImgDTO;
 import ncl.yujiaqi.dynamic.domain.entity.PostImg;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -20,11 +21,13 @@ public interface PostImgService extends IService<PostImg> {
 
     Boolean delete(Long id);
 
-    List<PostImg> addList(Long postId, List<String> imageList);
+    List<PostImg> addList(Long postId, List<Long> imageDataIds);
 
     List<PostImg> selectByPostIds(List<Long> postIds);
 
     List<PostImg> selectByPostId(Long postId);
 
     void deleteByPostId(Long id);
+
+    PostImgDTO convertToDto(PostImg img);
 }

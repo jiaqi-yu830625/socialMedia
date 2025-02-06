@@ -34,7 +34,7 @@ public class PostDTO extends BaseEntity {
     private String content;
 
     @ApiModelProperty(value = "post images")
-    private List<String> imageList;
+    private List<Long> imageDataIdList;
 
     @ApiModelProperty(value = "public,friends,private")
     private String visibility;
@@ -45,11 +45,11 @@ public class PostDTO extends BaseEntity {
     private List<PostCommentDTO> postComments;
     private List<CommentUserDTO> commentUsers;
 
-    public PostDTO(Long id, Long userId, String content, List<String> imageList, Date createTime) {
+    public PostDTO(Long id, Long userId, String content, List<Long> imageDataIdList, Date createTime) {
         super.setId(id);
         super.setCreateTime(createTime);
         this.userId = userId;
         this.content = content;
-        this.imageList = imageList;
+        this.imageDataIdList = imageDataIdList;
     }
 }

@@ -11,33 +11,24 @@ import lombok.experimental.Accessors;
 import ncl.yujiaqi.system.domain.entity.BaseEntity;
 
 /**
- * post image table
- *
- * @author yujiaqi
- * @since 2025-02-05
+ * @Author yujiaqi
+ * @Since 06/02/2025
  */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 @Accessors(chain = true)
-@TableName(value = "dyn_post_img", autoResultMap = true)
-@ApiModel(value = "DynPostImg", description = "post image table")
-public class PostImg extends BaseEntity {
+@TableName(value = "dyn_file", autoResultMap = true)
+@ApiModel(value = "DynFile", description = "image file table")
+public class PostImgData extends BaseEntity {
 
     private static final long serialVersionUID = 1L;
 
-    @ApiModelProperty(value = "post id")
-    private Long postId;
+    @ApiModelProperty(value = "file name")
+    private String fileName;
 
-    @ApiModelProperty(value = "image url")
-    private String url;
+    @ApiModelProperty(value = "file data")
+    private byte[] fileData;
 
-    @ApiModelProperty(value = "file id")
-    private Long fileId;
-
-    public PostImg(Long postId, Long fileId) {
-        this.postId = postId;
-        this.fileId = fileId;
-    }
 }

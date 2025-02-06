@@ -1,0 +1,1 @@
+alter table `dyn_post_img` add column file_id bigint(20) not null COMMENT 'img file id';

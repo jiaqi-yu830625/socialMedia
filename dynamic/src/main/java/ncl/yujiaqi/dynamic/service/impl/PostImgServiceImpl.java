@@ -1,5 +1,7 @@
 package ncl.yujiaqi.dynamic.service.impl;
 
+import cn.hutool.core.bean.BeanUtil;
+import ncl.yujiaqi.dynamic.domain.dto.PostImgDTO;
 import ncl.yujiaqi.dynamic.domain.entity.PostImg;
 import ncl.yujiaqi.dynamic.mapper.PostImgMapper;
 import ncl.yujiaqi.dynamic.service.PostImgService;
@@ -39,10 +41,10 @@ public class PostImgServiceImpl extends ServiceImpl<PostImgMapper, PostImg> impl
 
     @Override
     @Transactional
-    public List<PostImg> addList(Long postId, List<String> imageList) {
-        List<PostImg> imgs = new ArrayList<>(imageList.size());
-        imageList.forEach(img -> {
-            PostImg postImg = new PostImg(postId, img);
+    public List<PostImg> addList(Long postId, List<Long> imageDataIds) {
+        List<PostImg> imgs = new ArrayList<>(imageDataIds.size());
+        imageDataIds.forEach(dataId -> {
+            PostImg postImg = new PostImg(postId, dataId);
             add(postImg);
             imgs.add(postImg);
         });
@@ -63,5 +65,12 @@ public class PostImgServiceImpl extends ServiceImpl<PostImgMapper, PostImg> impl
     @Override
     public void deleteByPostId(Long postId) {
         baseMapper.deleteByPostId(postId);
+    }
+
+    @Override
+    public PostImgDTO convertToDto(PostImg img) {
+        PostImgDTO postImgDTO = new PostImgDTO();
+        BeanUtil.copyProperties(img, postImgDTO);
+        return postImgDTO;
     }
 }

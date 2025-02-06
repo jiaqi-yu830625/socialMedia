@@ -7,3 +7,22 @@ databaseChangeLog:
             encoding: utf8
             path: classpath:db.changelog/mysql/2025020501_init.sql
       comment: init tables
+
+  - changeSet:
+      id: 2025020601_add_file
+      author: yujiaqi
+      changes:
+        - sqlFile:
+            encoding: utf8
+            path: classpath:db.changelog/mysql/2025020601_add_file.sql
+      comment: add file
+
+  - changeSet:
+      id: 025020602_update_img
+      author: yujiaqi
+      changes:
+        - sqlFile:
+            encoding: utf8
+            path: classpath:db.changelog/mysql/2025020602_update_img.sql
+      comment: update dyn_post_img add file_id
+

@@ -17,16 +17,17 @@ public enum ResultEnum {
     LOGIN_PWD_WRONG("40101", "login fail, wrong email/phone or password"),
     LOGIN_USER_DISABLED("40301", "user account is disabled"),
     DATA_NOT("40404", "no relative data"),
-    LOGIN_VERIFY_FAIL("2", "login verify fail"),
-    PARAM_VERIFY_FAIL("3", "param verify fail"),
-    AUTH_FAILED("4", "Invalid token"),
-    PARAM_NOT_FOUND("12", "param not found"),
-    PARAM_FORMAT_ERROR("16", "param format error"),
-    DATA_NOT_FOUND("18", "data not found"),
-    ILLEGAL_OPERATION("19", "illegal operation"),
-    DATA_REPEAT("20", "data repeat"),
-    DUPLICATE_USERNAME("39", "duplicate account"),
-    USER_NOT_FOUND("40", "user not found")
+    LOGIN_VERIFY_FAIL("1", "login verify fail"),
+    PARAM_VERIFY_FAIL("2", "param verify fail"),
+    AUTH_FAILED("3", "Invalid token"),
+    PARAM_NOT_FOUND("4", "param not found"),
+    PARAM_FORMAT_ERROR("5", "param format error"),
+    DATA_NOT_FOUND("6", "data not found"),
+    ILLEGAL_OPERATION("7", "illegal operation"),
+    DATA_REPEAT("8", "data repeat"),
+    DUPLICATE_USERNAME("9", "duplicate account"),
+    USER_NOT_FOUND("10", "user not found"),
+    FILE_UPLOAD_FAIL("11","file upload fail")
     ;
     private final String code;
 
