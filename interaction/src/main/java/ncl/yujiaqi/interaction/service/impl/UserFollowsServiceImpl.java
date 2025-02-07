@@ -1,9 +1,9 @@
-package ncl.yujiaqi.dynamic.service.impl;
+package ncl.yujiaqi.interaction.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import ncl.yujiaqi.dynamic.domain.entity.UserFollows;
-import ncl.yujiaqi.dynamic.mapper.UserFollowsMapper;
-import ncl.yujiaqi.dynamic.service.UserFollowsService;
+import ncl.yujiaqi.interaction.domain.entity.UserFollows;
+import ncl.yujiaqi.interaction.mapper.UserFollowsMapper;
+import ncl.yujiaqi.interaction.service.UserFollowsService;
 import org.springframework.stereotype.Service;
 
 /**

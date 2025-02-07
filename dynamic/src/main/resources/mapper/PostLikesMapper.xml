@@ -32,4 +32,11 @@
           and post_id = ${postId}
     </select>
 
+    <select id="selectByUserAndPost" resultType="ncl.yujiaqi.dynamic.domain.entity.PostLikes">
+        select * from dyn_post_likes
+        where deleted = 0
+        and post_id = ${postId}
+        and user_id = ${userId}
+    </select>
+
 </mapper>

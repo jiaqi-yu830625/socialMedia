@@ -35,5 +35,10 @@ public class PostComment extends BaseEntity {
     @ApiModelProperty(value = "parent comment id(use to comment the comment)")
     private Long parentCommentId;
 
-
+    public PostComment(Long userId, Long postId, String comment, Long parentCommentId) {
+        this.userId = userId;
+        this.postId = postId;
+        this.comment = comment;
+        this.parentCommentId = parentCommentId;
+    }
 }

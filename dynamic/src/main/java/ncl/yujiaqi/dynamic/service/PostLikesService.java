@@ -25,4 +25,8 @@ public interface PostLikesService extends IService<PostLikes>  {
     List<PostLikes> selectByPostId(Long postId);
 
     void deleteByPostId(Long postId);
+
+    PostLikes addByPostId(Long postId);
+
+    void deleteByUserAndPost(Long postId);
 }

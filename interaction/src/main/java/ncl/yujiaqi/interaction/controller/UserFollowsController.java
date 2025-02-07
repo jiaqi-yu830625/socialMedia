@@ -1,7 +1,7 @@
-package ncl.yujiaqi.dynamic.controller;
+package ncl.yujiaqi.interaction.controller;
 
-import org.springframework.web.bind.annotation.RequestMapping;
 import io.swagger.annotations.Api;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @Api(value = "user follows table", tags = "user follows table")
-@RequestMapping("/dyn_user_follows")
+@RequestMapping("/user_follows")
 public class UserFollowsController {
 
 }

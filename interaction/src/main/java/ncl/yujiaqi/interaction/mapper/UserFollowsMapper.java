@@ -1,7 +1,7 @@
-package ncl.yujiaqi.dynamic.mapper;
+package ncl.yujiaqi.interaction.mapper;
 
-import ncl.yujiaqi.dynamic.domain.entity.UserFollows;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import ncl.yujiaqi.interaction.domain.entity.UserFollows;
 
 /**
  * <p>

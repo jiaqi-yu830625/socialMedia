@@ -58,6 +58,8 @@
         <appender-ref ref="FILE"/>
     </root>
 
-    <logger name="com.ztbase.erp.mapper" level="DEBUG"/>
+    <logger name="ncl.yujiaqi.system.mapper" level="DEBUG"/>
+    <logger name="ncl.yujiaqi.dynamic.mapper" level="DEBUG"/>
+    <logger name="ncl.yujiaqi.interaction.mapper" level="DEBUG"/>
 
 </configuration>

@@ -1,7 +1,7 @@
-package ncl.yujiaqi.dynamic.service;
+package ncl.yujiaqi.interaction.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import ncl.yujiaqi.dynamic.domain.entity.UserFollows;
+import ncl.yujiaqi.interaction.domain.entity.UserFollows;
 
 /**
  * user follows table

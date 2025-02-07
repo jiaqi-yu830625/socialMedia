@@ -1,4 +1,4 @@
-package ncl.yujiaqi.dynamic.domain.entity;
+package ncl.yujiaqi.interaction.domain.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import io.swagger.annotations.ApiModel;

@@ -31,4 +31,6 @@ public interface PostCommentService extends IService<PostComment>  {
     List<CommentUserDTO> listCommentUserByIds(List<Long> userIds);
 
     void deleteByPostId(Long postId);
+
+    PostComment addComment(Long postId, Long sourceId, String comment);
 }

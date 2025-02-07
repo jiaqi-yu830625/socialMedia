@@ -1,13 +1,13 @@
 package ncl.yujiaqi.dynamic.service.impl;
 
 import cn.hutool.core.collection.CollectionUtil;
-import cn.hutool.core.util.ArrayUtil;
 import ncl.yujiaqi.dynamic.domain.dto.CommentUserDTO;
 import ncl.yujiaqi.dynamic.domain.dto.PostCommentDTO;
 import ncl.yujiaqi.dynamic.domain.entity.PostComment;
 import ncl.yujiaqi.dynamic.mapper.PostCommentMapper;
 import ncl.yujiaqi.dynamic.service.PostCommentService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import ncl.yujiaqi.system.domain.dto.UserDTO;
 import ncl.yujiaqi.system.domain.entity.User;
 import ncl.yujiaqi.system.service.UserService;
 import org.springframework.stereotype.Service;
@@ -15,7 +15,6 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import java.util.*;
 import java.util.function.Function;
-import java.util.stream.Collectors;
 
 import static java.util.stream.Collectors.groupingBy;
 import static java.util.stream.Collectors.toMap;
@@ -105,5 +104,14 @@ public class PostCommentServiceImpl extends ServiceImpl<PostCommentMapper, PostC
     @Override
     public void deleteByPostId(Long postId) {
         baseMapper.deleteByPostId(postId);
+    }
+
+    @Override
+    public PostComment addComment(Long postId, Long sourceId, String comment) {
+        UserDTO userDTO = userService.getCurrentUser();
+        PostComment postComment = new PostComment(userDTO.getId(), postId, comment, sourceId);
+        add(postComment);
+
+        return postComment;
     }
 }
