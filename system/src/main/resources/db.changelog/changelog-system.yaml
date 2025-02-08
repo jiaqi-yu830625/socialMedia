@@ -16,3 +16,12 @@ databaseChangeLog:
             encoding: utf8
             path: classpath:db.changelog/mysql/2025020302_insert.sql
       comment: init tables
+
+  - changeSet:
+      id: 2025020701_modify
+      author: yujiaqi
+      changes:
+        - sqlFile:
+            encoding: utf8
+            path: classpath:db.changelog/mysql/2025020701_modify.sql
+      comment: modify tables

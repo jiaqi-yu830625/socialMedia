@@ -14,6 +14,7 @@ import ncl.yujiaqi.system.mapper.UserMapper;
 import ncl.yujiaqi.system.service.RoleService;
 import ncl.yujiaqi.system.service.UserRoleService;
 import ncl.yujiaqi.system.service.UserService;
+import ncl.yujiaqi.system.util.DateFormatUtil;
 import ncl.yujiaqi.system.util.JwtTokenUtils;
 import ncl.yujiaqi.system.util.LoginUtils;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -51,6 +52,8 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         }
         // user's password should be encoded
         user.setPassword(passwordEncoder.encode(user.getPassword()));
+
+        user.setIsActive(true);
         baseMapper.insert(user);
         // user's role default 'user', as admin cannot register
         Role role = roleService.getByName("user");
@@ -113,7 +116,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
 
     /**
      * get user by token
-
+     *
      * @return user
      */
     @Override

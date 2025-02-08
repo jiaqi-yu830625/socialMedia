@@ -22,14 +22,19 @@
     <select id="selectByAccountAndPwd" resultMap="BaseResultMap" >
         select *
         from user
-        where (email = ${account} or phone = ${account})
-          and password = ${pwd}
+        where (email = #{account} or phone = #{account})
+          and password = #{pwd}
           and deleted = 0
     </select>
     <select id="selectByAccount" resultType="ncl.yujiaqi.system.domain.entity.User">
         select * from user
-        where (email = ${email} or phone = ${phone})
-        and deleted = 0
+        where deleted = 0
+        <if test="email != null and email != ''">
+            AND email = #{email}
+        </if>
+        <if test="phone != null and phone != ''">
+            AND phone = #{phone}
+        </if>
     </select>
 
 

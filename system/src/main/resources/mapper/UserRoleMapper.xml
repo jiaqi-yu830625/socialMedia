@@ -15,7 +15,7 @@
         select *
         from user_role
         where deleted = 0
-          and user_id = ${userId}
+          and user_id = #{userId}
     </select>
 
 

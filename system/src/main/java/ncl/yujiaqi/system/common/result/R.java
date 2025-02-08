@@ -48,6 +48,12 @@ public final class R<T> implements Serializable {
         this.msg = msg;
     }
 
+    public R(T data, String code, String msg) {
+        this.data = data;
+        this.code = code;
+        this.msg = msg;
+    }
+
     private R(ResultEnum resultEnum, String msg) {
         super();
         this.code = resultEnum.getCode();
@@ -66,11 +72,11 @@ public final class R<T> implements Serializable {
     }
 
     public static <T> R<T> success() {
-        return new R<>();
+        return new R<>(SUCCESS_CODE, SUCCESS_MESSAGE);
     }
 
     public static <T> R<T> success(T t) {
-        return new R<>(t);
+        return new R<>(t, SUCCESS_CODE, SUCCESS_MESSAGE);
     }
 
     public static <T> R<T> fail(ResultEnum resultEnum) {

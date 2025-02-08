@@ -15,14 +15,14 @@
     <select id="delById">
         update dyn_post
         set deleted = 1
-        where id = ${id}
+        where id = #{id}
     </select>
 
     <select id="getByUserId" resultMap="BaseResultMap">
         select *
         from dyn_post
         where deleted = 0
-          and user_id = ${userId}
+          and user_id = #{userId}
     </select>
 
 </mapper>

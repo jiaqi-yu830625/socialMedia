@@ -18,7 +18,7 @@ spring:
     port: 6379
   liquibase:
     enabled: true
-    change-log: classpath:db.changelog/changelog-dynamic.yaml
+    change-log: classpath:db.changelog/changelog-system.yaml
   servlet:
     multipart:
       max-file-size: 500MB

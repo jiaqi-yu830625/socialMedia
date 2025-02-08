@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-    <property name="fileName" value="erp"/>
-    <property name="springAppName" value="erp"/>
+    <property name="fileName" value="socialMedia"/>
+    <property name="springAppName" value="socialMedia"/>
 
     <include resource="org/springframework/boot/logging/logback/defaults.xml"/>​
 
