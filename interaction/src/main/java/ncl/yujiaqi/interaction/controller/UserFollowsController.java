@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @Api(value = "user follows table", tags = "user follows table")
-@RequestMapping("/user_follows")
+@RequestMapping("/follows")
 public class UserFollowsController {
 
 }

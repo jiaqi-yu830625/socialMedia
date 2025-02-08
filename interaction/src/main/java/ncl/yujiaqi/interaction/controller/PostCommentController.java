@@ -5,11 +5,13 @@ import io.swagger.annotations.ApiOperation;
 import ncl.yujiaqi.dynamic.domain.entity.PostComment;
 import ncl.yujiaqi.dynamic.service.PostCommentService;
 import ncl.yujiaqi.system.common.result.R;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import javax.websocket.server.PathParam;
 
 /**
  * post comment table controller
@@ -28,6 +30,13 @@ public class PostCommentController {
     @PostMapping(value = "/comment")
     @ApiOperation(tags = "comment", value = "comment")
     public R<PostComment> addComment(Long postId, Long sourceId, String comment) {
-        return R.success(postCommentService.addComment(postId,sourceId, comment));
+        return R.success(postCommentService.addComment(postId, sourceId, comment));
+    }
+
+    @DeleteMapping(value = "/delById/{id}")
+    @ApiOperation(tags = "comment", value = "delete by id")
+    public R deleteById(@PathParam("id") Long id) {
+        postCommentService.delete(id);
+        return R.success();
     }
 }

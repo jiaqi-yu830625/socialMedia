@@ -92,18 +92,21 @@ public class PostServiceImpl extends ServiceImpl<PostMapper, Post> implements Po
         List<PostDTO> dtos = getByUserId(userId);
         List<Long> postIds = dtos.stream().map(PostDTO::getId).collect(toList());
 
-        // search post-likes and post-comments
+        // search post-likes
         Map<Long, List<PostLikes>> likesMap = postLikesService.selectByPostIds(postIds).stream().collect(groupingBy(PostLikes::getPostId));
 
         // search post-comments
-        Map<Long, List<PostComment>> commentsMap = postCommentService.selectByPostIds(postIds).stream().collect(groupingBy(PostComment::getPostId));
+        List<PostComment> postComments = postCommentService.selectByPostIds(postIds);
+        Map<Long, List<PostComment>> commentsMap = postComments.stream().collect(groupingBy(PostComment::getPostId));
         Map<Long, List<PostCommentDTO>> commentsDtoMap = new HashMap<>(commentsMap.size());
         commentsMap.forEach((postId, comments) ->
                 commentsDtoMap.put(postId, postCommentService.buildCommentTree(comments)));
 
         dtos.forEach(dto ->
                 dto.setLikesNumber(likesMap.get(dto.getId()).size())
-                        .setPostComments(commentsDtoMap.get(dto.getId())));
+                        .setCommentNumber(postComments.size())
+                        .setPostComments(commentsDtoMap.get(dto.getId()))
+        );
 
         // sort by createTime desc
         dtos = dtos.stream().sorted(Comparator.comparing(PostDTO::getCreateTime).reversed()).collect(toList());
@@ -143,7 +146,7 @@ public class PostServiceImpl extends ServiceImpl<PostMapper, Post> implements Po
         Long userId = userService.getCurrentUser().getId();
         Post post = getById(id);
         if (!post.getUserId().equals(userId)) {
-            throw SMException.build(ResultEnum.AUTH_FAILED,"you cannot delete this post!");
+            throw SMException.build(ResultEnum.AUTH_FAILED, "you cannot delete this post!");
         }
 
         // delete images

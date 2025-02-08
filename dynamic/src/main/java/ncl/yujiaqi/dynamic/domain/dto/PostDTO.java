@@ -41,6 +41,7 @@ public class PostDTO extends BaseEntity {
 
     private User user;
     private Integer likesNumber;
+    private Integer commentNumber;
     private List<PostLikes> postLikes;
     private List<PostCommentDTO> postComments;
     private List<CommentUserDTO> commentUsers;
