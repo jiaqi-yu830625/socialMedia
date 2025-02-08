@@ -59,8 +59,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .authorizeRequests()
                 // 只需要登录就能访问的请求
-                .antMatchers("/login/login").access("authenticated")
-                .antMatchers("/user/register").permitAll()
+                .antMatchers("/user/register", "/login/login", "/api/login/login").permitAll()
+//                .antMatchers("/login/login").access("authenticated")
                 // 剩余所有请求都要经过认证且判断权限
                 .anyRequest().access("authenticated and @resourceCertification.access(request)")
                 .and()

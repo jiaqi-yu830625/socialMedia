@@ -4,7 +4,11 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import ncl.yujiaqi.interaction.domain.entity.UserFollows;
 import ncl.yujiaqi.interaction.mapper.UserFollowsMapper;
 import ncl.yujiaqi.interaction.service.UserFollowsService;
+import ncl.yujiaqi.system.domain.dto.UserDTO;
+import ncl.yujiaqi.system.service.UserService;
 import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
 
 /**
  * user follows table
@@ -15,6 +19,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserFollowsServiceImpl extends ServiceImpl<UserFollowsMapper, UserFollows> implements UserFollowsService {
 
+    @Resource
+    private UserService userService;
 
     @Override
     public UserFollows add(UserFollows userFollows) {
@@ -31,5 +37,13 @@ public class UserFollowsServiceImpl extends ServiceImpl<UserFollowsMapper, UserF
     @Override
     public Boolean delete(Long id) {
         return baseMapper.deleteById(id) > 0;
+    }
+
+    @Override
+    public UserFollows addById(Long followUserId) {
+        UserDTO userDTO = userService.getCurrentUser();
+        Long userId = userDTO.getId();
+//todo
+        return new UserFollows();
     }
 }

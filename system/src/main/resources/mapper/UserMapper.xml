@@ -26,15 +26,23 @@
           and password = #{pwd}
           and deleted = 0
     </select>
-    <select id="selectByAccount" resultType="ncl.yujiaqi.system.domain.entity.User">
-        select * from user
-        where deleted = 0
-        <if test="email != null and email != ''">
-            AND email = #{email}
-        </if>
-        <if test="phone != null and phone != ''">
-            AND phone = #{phone}
-        </if>
+    <select id="selectByEmail" resultType="ncl.yujiaqi.system.domain.entity.User">
+        SELECT * FROM user
+        <where>
+            deleted = 0
+            <if test="email != null and email != ''">
+                AND email = #{email}
+            </if>
+        </where>
+    </select>
+    <select id="selectByPhone" resultType="ncl.yujiaqi.system.domain.entity.User">
+        SELECT * FROM user
+        <where>
+            deleted = 0
+            <if test="phone != null and phone != ''">
+                AND phone = #{phone}
+            </if>
+        </where>
     </select>
 
 

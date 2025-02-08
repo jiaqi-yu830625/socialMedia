@@ -14,7 +14,6 @@ import ncl.yujiaqi.system.mapper.UserMapper;
 import ncl.yujiaqi.system.service.RoleService;
 import ncl.yujiaqi.system.service.UserRoleService;
 import ncl.yujiaqi.system.service.UserService;
-import ncl.yujiaqi.system.util.DateFormatUtil;
 import ncl.yujiaqi.system.util.JwtTokenUtils;
 import ncl.yujiaqi.system.util.LoginUtils;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -22,8 +21,8 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.Date;
-import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 
 /**
  * user table ServiceImpl
@@ -46,8 +45,9 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
     @Override
     public User add(User user) {
         // check duplicate (email and phone)
-        List<User> users = selectByAccount(user.getEmail(), user.getPhone());
-        if (!users.isEmpty()) {
+        User checkEmail = selectByAccount(user.getEmail());
+        User checkPhone = selectByAccount(user.getPhone());
+        if (checkEmail != null || checkPhone != null) {
             throw SMException.build(ResultEnum.DATA_REPEAT, "email or phone is exist");
         }
         // user's password should be encoded
@@ -93,11 +93,17 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
             throw SMException.build(ResultEnum.LOGIN_PWD_WRONG, "password cannot be null");
         }
 
-        // check account and password in database
-        User user = userMapper.selectByAccountAndPwd(account, password);
+        // check user exist
+        User byEmail = userMapper.selectByEmail(account);
+        User byPhone = userMapper.selectByPhone(account);
+        User user = byEmail != null ? byEmail : byPhone;
         if (Objects.isNull(user)) {
-            throw SMException.build(ResultEnum.LOGIN_PWD_WRONG);
+            throw SMException.build(ResultEnum.USER_NOT_FOUND, "wrong account");
         }
+        if (!passwordEncoder.matches(password, user.getPassword())) {
+            throw SMException.build(ResultEnum.LOGIN_PWD_WRONG, "wrong password");
+        }
+
         //if user exist generate token
         UserDTO userDTO = convert(user);
         String token = JwtTokenUtils.genToken(userDTO);
@@ -132,8 +138,10 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         return userDTO;
     }
 
-    public List<User> selectByAccount(String email, String phone) {
-        return baseMapper.selectByAccount(email, phone);
+    public User selectByAccount(String account) {
+        User byEmail = userMapper.selectByEmail(account);
+        User byPhone = userMapper.selectByEmail(account);
+        return byEmail != null ? byEmail : byPhone;
     }
 
 }
