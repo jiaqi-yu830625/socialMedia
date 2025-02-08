@@ -4024,3 +4024,871 @@ Using generated security password: eba0c94d-c721-446d-8163-163a237792a1
 2025-02-08 15:13:25.197 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-1] n.y.s.m.UserRoleMapper.selectByUserId    : ==>  Preparing: select * from user_role where deleted = 0 and user_id = ?
 2025-02-08 15:13:25.199 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-1] n.y.s.m.UserRoleMapper.selectByUserId    : ==> Parameters: 4(Long)
 2025-02-08 15:13:25.206 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-1] n.y.s.m.UserRoleMapper.selectByUserId    : <==      Total: 1
+2025-02-08 15:15:32.654 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-4] n.y.s.mapper.UserMapper.selectByEmail    : ==>  Preparing: SELECT * FROM user WHERE deleted = 0 AND email = ?
+2025-02-08 15:15:32.657 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-4] n.y.s.mapper.UserMapper.selectByEmail    : ==> Parameters: user@example.com(String)
+2025-02-08 15:15:32.663 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-4] n.y.s.mapper.UserMapper.selectByEmail    : <==      Total: 1
+2025-02-08 15:15:32.666 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-4] n.y.s.mapper.UserMapper.selectByPhone    : ==>  Preparing: SELECT * FROM user WHERE deleted = 0 AND phone = ?
+2025-02-08 15:15:32.667 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-4] n.y.s.mapper.UserMapper.selectByPhone    : ==> Parameters: user@example.com(String)
+2025-02-08 15:15:32.669 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-4] n.y.s.mapper.UserMapper.selectByPhone    : <==      Total: 0
+2025-02-08 15:15:32.754 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-4] n.y.s.m.UserRoleMapper.selectByUserId    : ==>  Preparing: select * from user_role where deleted = 0 and user_id = ?
+2025-02-08 15:15:32.755 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-4] n.y.s.m.UserRoleMapper.selectByUserId    : ==> Parameters: 5(Long)
+2025-02-08 15:15:32.760 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-4] n.y.s.m.UserRoleMapper.selectByUserId    : <==      Total: 1
+2025-02-08 15:17:29.742 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-6] n.y.s.mapper.UserMapper.selectByEmail    : ==>  Preparing: SELECT * FROM user WHERE deleted = 0 AND email = ?
+2025-02-08 15:17:29.745 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-6] n.y.s.mapper.UserMapper.selectByEmail    : ==> Parameters: user@example.com(String)
+2025-02-08 15:17:29.752 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-6] n.y.s.mapper.UserMapper.selectByEmail    : <==      Total: 1
+2025-02-08 15:17:29.753 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-6] n.y.s.mapper.UserMapper.selectByPhone    : ==>  Preparing: SELECT * FROM user WHERE deleted = 0 AND phone = ?
+2025-02-08 15:17:29.754 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-6] n.y.s.mapper.UserMapper.selectByPhone    : ==> Parameters: user@example.com(String)
+2025-02-08 15:17:29.756 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-6] n.y.s.mapper.UserMapper.selectByPhone    : <==      Total: 0
+2025-02-08 15:17:29.847 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-6] n.y.s.m.UserRoleMapper.selectByUserId    : ==>  Preparing: select * from user_role where deleted = 0 and user_id = ?
+2025-02-08 15:17:29.848 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-6] n.y.s.m.UserRoleMapper.selectByUserId    : ==> Parameters: 5(Long)
+2025-02-08 15:17:29.851 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-6] n.y.s.m.UserRoleMapper.selectByUserId    : <==      Total: 1
+2025-02-08 15:20:57.607 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-8] n.y.s.mapper.UserMapper.selectByEmail    : ==>  Preparing: SELECT * FROM user WHERE deleted = 0 AND email = ?
+2025-02-08 15:20:57.613 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-8] n.y.s.mapper.UserMapper.selectByEmail    : ==> Parameters: user@example.com(String)
+2025-02-08 15:20:57.620 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-8] n.y.s.mapper.UserMapper.selectByEmail    : <==      Total: 1
+2025-02-08 15:20:57.620 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-8] n.y.s.mapper.UserMapper.selectByPhone    : ==>  Preparing: SELECT * FROM user WHERE deleted = 0 AND phone = ?
+2025-02-08 15:20:57.621 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-8] n.y.s.mapper.UserMapper.selectByPhone    : ==> Parameters: user@example.com(String)
+2025-02-08 15:20:57.623 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-8] n.y.s.mapper.UserMapper.selectByPhone    : <==      Total: 0
+2025-02-08 15:20:57.714 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-8] n.y.s.m.UserRoleMapper.selectByUserId    : ==>  Preparing: select * from user_role where deleted = 0 and user_id = ?
+2025-02-08 15:20:57.714 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-8] n.y.s.m.UserRoleMapper.selectByUserId    : ==> Parameters: 5(Long)
+2025-02-08 15:20:57.716 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-8] n.y.s.m.UserRoleMapper.selectByUserId    : <==      Total: 1
+2025-02-08 15:23:25.090 DEBUG [socialMedia,,,,] 20631 --- [.0-8088-exec-10] n.y.s.mapper.UserMapper.selectByEmail    : ==>  Preparing: SELECT * FROM user WHERE deleted = 0 AND email = ?
+2025-02-08 15:23:25.093 DEBUG [socialMedia,,,,] 20631 --- [.0-8088-exec-10] n.y.s.mapper.UserMapper.selectByEmail    : ==> Parameters: user@example.com(String)
+2025-02-08 15:23:25.099 DEBUG [socialMedia,,,,] 20631 --- [.0-8088-exec-10] n.y.s.mapper.UserMapper.selectByEmail    : <==      Total: 1
+2025-02-08 15:23:25.100 DEBUG [socialMedia,,,,] 20631 --- [.0-8088-exec-10] n.y.s.mapper.UserMapper.selectByPhone    : ==>  Preparing: SELECT * FROM user WHERE deleted = 0 AND phone = ?
+2025-02-08 15:23:25.101 DEBUG [socialMedia,,,,] 20631 --- [.0-8088-exec-10] n.y.s.mapper.UserMapper.selectByPhone    : ==> Parameters: user@example.com(String)
+2025-02-08 15:23:25.102 DEBUG [socialMedia,,,,] 20631 --- [.0-8088-exec-10] n.y.s.mapper.UserMapper.selectByPhone    : <==      Total: 0
+2025-02-08 15:23:25.198 DEBUG [socialMedia,,,,] 20631 --- [.0-8088-exec-10] n.y.s.m.UserRoleMapper.selectByUserId    : ==>  Preparing: select * from user_role where deleted = 0 and user_id = ?
+2025-02-08 15:23:25.199 DEBUG [socialMedia,,,,] 20631 --- [.0-8088-exec-10] n.y.s.m.UserRoleMapper.selectByUserId    : ==> Parameters: 5(Long)
+2025-02-08 15:23:25.201 DEBUG [socialMedia,,,,] 20631 --- [.0-8088-exec-10] n.y.s.m.UserRoleMapper.selectByUserId    : <==      Total: 1
+2025-02-08 15:24:55.840 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-3] n.y.s.mapper.UserMapper.selectByEmail    : ==>  Preparing: SELECT * FROM user WHERE deleted = 0 AND email = ?
+2025-02-08 15:24:55.847 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-3] n.y.s.mapper.UserMapper.selectByEmail    : ==> Parameters: user@example.com(String)
+2025-02-08 15:24:55.854 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-3] n.y.s.mapper.UserMapper.selectByEmail    : <==      Total: 1
+2025-02-08 15:24:55.855 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-3] n.y.s.mapper.UserMapper.selectByPhone    : ==>  Preparing: SELECT * FROM user WHERE deleted = 0 AND phone = ?
+2025-02-08 15:24:55.856 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-3] n.y.s.mapper.UserMapper.selectByPhone    : ==> Parameters: user@example.com(String)
+2025-02-08 15:24:55.857 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-3] n.y.s.mapper.UserMapper.selectByPhone    : <==      Total: 0
+2025-02-08 15:24:55.950 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-3] n.y.s.m.UserRoleMapper.selectByUserId    : ==>  Preparing: select * from user_role where deleted = 0 and user_id = ?
+2025-02-08 15:24:55.950 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-3] n.y.s.m.UserRoleMapper.selectByUserId    : ==> Parameters: 5(Long)
+2025-02-08 15:24:55.953 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-3] n.y.s.m.UserRoleMapper.selectByUserId    : <==      Total: 1
+2025-02-08 15:39:05.900 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-4] n.y.s.mapper.UserMapper.selectByEmail    : ==>  Preparing: SELECT * FROM user WHERE deleted = 0 AND email = ?
+2025-02-08 15:39:05.904 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-4] n.y.s.mapper.UserMapper.selectByEmail    : ==> Parameters: user@example.com(String)
+2025-02-08 15:39:05.911 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-4] n.y.s.mapper.UserMapper.selectByEmail    : <==      Total: 1
+2025-02-08 15:39:05.911 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-4] n.y.s.mapper.UserMapper.selectByPhone    : ==>  Preparing: SELECT * FROM user WHERE deleted = 0 AND phone = ?
+2025-02-08 15:39:05.912 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-4] n.y.s.mapper.UserMapper.selectByPhone    : ==> Parameters: user@example.com(String)
+2025-02-08 15:39:05.913 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-4] n.y.s.mapper.UserMapper.selectByPhone    : <==      Total: 0
+2025-02-08 15:39:06.005 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-4] n.y.s.m.UserRoleMapper.selectByUserId    : ==>  Preparing: select * from user_role where deleted = 0 and user_id = ?
+2025-02-08 15:39:06.009 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-4] n.y.s.m.UserRoleMapper.selectByUserId    : ==> Parameters: 5(Long)
+2025-02-08 15:39:06.011 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-4] n.y.s.m.UserRoleMapper.selectByUserId    : <==      Total: 1
+2025-02-08 15:53:01.816 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-7] n.y.s.mapper.UserMapper.selectByEmail    : ==>  Preparing: SELECT * FROM user WHERE deleted = 0 AND email = ?
+2025-02-08 15:53:01.819 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-7] n.y.s.mapper.UserMapper.selectByEmail    : ==> Parameters: user@example.com(String)
+2025-02-08 15:53:01.837 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-7] n.y.s.mapper.UserMapper.selectByEmail    : <==      Total: 1
+2025-02-08 15:53:01.839 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-7] n.y.s.mapper.UserMapper.selectByPhone    : ==>  Preparing: SELECT * FROM user WHERE deleted = 0 AND phone = ?
+2025-02-08 15:53:01.839 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-7] n.y.s.mapper.UserMapper.selectByPhone    : ==> Parameters: user@example.com(String)
+2025-02-08 15:53:01.840 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-7] n.y.s.mapper.UserMapper.selectByPhone    : <==      Total: 0
+2025-02-08 15:53:01.930 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-7] n.y.s.m.UserRoleMapper.selectByUserId    : ==>  Preparing: select * from user_role where deleted = 0 and user_id = ?
+2025-02-08 15:53:01.931 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-7] n.y.s.m.UserRoleMapper.selectByUserId    : ==> Parameters: 5(Long)
+2025-02-08 15:53:01.933 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-7] n.y.s.m.UserRoleMapper.selectByUserId    : <==      Total: 1
+2025-02-08 16:00:21.179 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-9] n.y.s.mapper.UserMapper.selectByEmail    : ==>  Preparing: SELECT * FROM user WHERE deleted = 0 AND email = ?
+2025-02-08 16:00:21.182 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-9] n.y.s.mapper.UserMapper.selectByEmail    : ==> Parameters: user@example.com(String)
+2025-02-08 16:00:21.191 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-9] n.y.s.mapper.UserMapper.selectByEmail    : <==      Total: 1
+2025-02-08 16:00:21.192 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-9] n.y.s.mapper.UserMapper.selectByPhone    : ==>  Preparing: SELECT * FROM user WHERE deleted = 0 AND phone = ?
+2025-02-08 16:00:21.193 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-9] n.y.s.mapper.UserMapper.selectByPhone    : ==> Parameters: user@example.com(String)
+2025-02-08 16:00:21.194 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-9] n.y.s.mapper.UserMapper.selectByPhone    : <==      Total: 0
+2025-02-08 16:00:21.287 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-9] n.y.s.m.UserRoleMapper.selectByUserId    : ==>  Preparing: select * from user_role where deleted = 0 and user_id = ?
+2025-02-08 16:00:21.287 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-9] n.y.s.m.UserRoleMapper.selectByUserId    : ==> Parameters: 5(Long)
+2025-02-08 16:00:21.290 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-9] n.y.s.m.UserRoleMapper.selectByUserId    : <==      Total: 1
+2025-02-08 16:31:53.069 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-3] n.y.s.mapper.UserMapper.selectByEmail    : ==>  Preparing: SELECT * FROM user WHERE deleted = 0 AND email = ?
+2025-02-08 16:31:53.071 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-3] n.y.s.mapper.UserMapper.selectByEmail    : ==> Parameters: user@example.com(String)
+2025-02-08 16:31:53.077 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-3] n.y.s.mapper.UserMapper.selectByEmail    : <==      Total: 1
+2025-02-08 16:31:53.078 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-3] n.y.s.mapper.UserMapper.selectByPhone    : ==>  Preparing: SELECT * FROM user WHERE deleted = 0 AND phone = ?
+2025-02-08 16:31:53.080 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-3] n.y.s.mapper.UserMapper.selectByPhone    : ==> Parameters: user@example.com(String)
+2025-02-08 16:31:53.082 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-3] n.y.s.mapper.UserMapper.selectByPhone    : <==      Total: 0
+2025-02-08 16:31:53.171 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-3] n.y.s.m.UserRoleMapper.selectByUserId    : ==>  Preparing: select * from user_role where deleted = 0 and user_id = ?
+2025-02-08 16:31:53.173 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-3] n.y.s.m.UserRoleMapper.selectByUserId    : ==> Parameters: 5(Long)
+2025-02-08 16:31:53.177 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-3] n.y.s.m.UserRoleMapper.selectByUserId    : <==      Total: 1
+2025-02-08 16:33:09.691 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-4] n.y.s.mapper.UserMapper.selectByEmail    : ==>  Preparing: SELECT * FROM user WHERE deleted = 0 AND email = ?
+2025-02-08 16:33:09.694 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-4] n.y.s.mapper.UserMapper.selectByEmail    : ==> Parameters: user@example.com(String)
+2025-02-08 16:33:09.698 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-4] n.y.s.mapper.UserMapper.selectByEmail    : <==      Total: 1
+2025-02-08 16:33:09.700 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-4] n.y.s.mapper.UserMapper.selectByPhone    : ==>  Preparing: SELECT * FROM user WHERE deleted = 0 AND phone = ?
+2025-02-08 16:33:09.701 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-4] n.y.s.mapper.UserMapper.selectByPhone    : ==> Parameters: user@example.com(String)
+2025-02-08 16:33:09.702 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-4] n.y.s.mapper.UserMapper.selectByPhone    : <==      Total: 0
+2025-02-08 16:33:09.798 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-4] n.y.s.m.UserRoleMapper.selectByUserId    : ==>  Preparing: select * from user_role where deleted = 0 and user_id = ?
+2025-02-08 16:33:09.800 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-4] n.y.s.m.UserRoleMapper.selectByUserId    : ==> Parameters: 5(Long)
+2025-02-08 16:33:09.803 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-4] n.y.s.m.UserRoleMapper.selectByUserId    : <==      Total: 1
+2025-02-08 16:34:50.854 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-8] n.y.s.mapper.UserMapper.selectByEmail    : ==>  Preparing: SELECT * FROM user WHERE deleted = 0 AND email = ?
+2025-02-08 16:34:50.867 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-8] n.y.s.mapper.UserMapper.selectByEmail    : ==> Parameters: user@example.com(String)
+2025-02-08 16:34:50.878 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-8] n.y.s.mapper.UserMapper.selectByEmail    : <==      Total: 1
+2025-02-08 16:34:50.879 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-8] n.y.s.mapper.UserMapper.selectByPhone    : ==>  Preparing: SELECT * FROM user WHERE deleted = 0 AND phone = ?
+2025-02-08 16:34:50.880 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-8] n.y.s.mapper.UserMapper.selectByPhone    : ==> Parameters: user@example.com(String)
+2025-02-08 16:34:50.881 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-8] n.y.s.mapper.UserMapper.selectByPhone    : <==      Total: 0
+2025-02-08 16:34:50.974 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-8] n.y.s.m.UserRoleMapper.selectByUserId    : ==>  Preparing: select * from user_role where deleted = 0 and user_id = ?
+2025-02-08 16:34:50.976 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-8] n.y.s.m.UserRoleMapper.selectByUserId    : ==> Parameters: 5(Long)
+2025-02-08 16:34:50.978 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-8] n.y.s.m.UserRoleMapper.selectByUserId    : <==      Total: 1
+2025-02-08 16:34:58.557 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-1] n.y.s.mapper.UserMapper.selectByEmail    : ==>  Preparing: SELECT * FROM user WHERE deleted = 0 AND email = ?
+2025-02-08 16:34:58.560 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-1] n.y.s.mapper.UserMapper.selectByEmail    : ==> Parameters: user@example.com(String)
+2025-02-08 16:34:58.563 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-1] n.y.s.mapper.UserMapper.selectByEmail    : <==      Total: 1
+2025-02-08 16:34:58.565 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-1] n.y.s.mapper.UserMapper.selectByPhone    : ==>  Preparing: SELECT * FROM user WHERE deleted = 0 AND phone = ?
+2025-02-08 16:34:58.566 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-1] n.y.s.mapper.UserMapper.selectByPhone    : ==> Parameters: user@example.com(String)
+2025-02-08 16:34:58.568 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-1] n.y.s.mapper.UserMapper.selectByPhone    : <==      Total: 0
+2025-02-08 16:34:58.668 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-1] n.y.s.m.UserRoleMapper.selectByUserId    : ==>  Preparing: select * from user_role where deleted = 0 and user_id = ?
+2025-02-08 16:34:58.670 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-1] n.y.s.m.UserRoleMapper.selectByUserId    : ==> Parameters: 5(Long)
+2025-02-08 16:34:58.673 DEBUG [socialMedia,,,,] 20631 --- [0.0-8088-exec-1] n.y.s.m.UserRoleMapper.selectByUserId    : <==      Total: 1
+2025-02-08 16:59:49.101  INFO [socialMedia,,,,] 20631 --- [extShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-02-08 16:59:49.106  INFO [socialMedia,,,,] 20631 --- [extShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2025-02-08 16:59:49.106  INFO [socialMedia,,,,] 20631 --- [extShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2025-02-08 16:59:49.107  INFO [socialMedia,,,,] 20631 --- [extShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-08 16:59:49.113  INFO [socialMedia,,,,] 20631 --- [extShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-08 16:59:58.818  INFO [socialMedia,,,,] 22771 --- [           main] ncl.yujiaqi.LauncherApplication          : Starting LauncherApplication on newhuaweiapstudent-10-59-7-138.ncl.ac.uk with PID 22771 (/Users/yujiaqi/personal_source/IdeaProjects/ncl/SocialMediaPlatform/SocialMediaPlatform/launcher/target/classes started by yujiaqi in /Users/yujiaqi/personal_source/IdeaProjects/ncl/SocialMediaPlatform/SocialMediaPlatform)
+2025-02-08 16:59:58.826  INFO [socialMedia,,,,] 22771 --- [           main] ncl.yujiaqi.LauncherApplication          : No active profile set, falling back to default profiles: default
+2025-02-08 17:00:00.619  INFO [socialMedia,,,,] 22771 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2025-02-08 17:00:00.623  INFO [socialMedia,,,,] 22771 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2025-02-08 17:00:00.670  INFO [socialMedia,,,,] 22771 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 37ms. Found 0 JPA repository interfaces.
+2025-02-08 17:00:00.700  INFO [socialMedia,,,,] 22771 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2025-02-08 17:00:00.701  INFO [socialMedia,,,,] 22771 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-02-08 17:00:00.720  INFO [socialMedia,,,,] 22771 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13ms. Found 0 Redis repository interfaces.
+2025-02-08 17:00:01.584  INFO [socialMedia,,,,] 22771 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8088 (http)
+2025-02-08 17:00:01.713  INFO [socialMedia,,,,] 22771 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-08 17:00:01.720  INFO [socialMedia,,,,] 22771 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.38]
+2025-02-08 17:00:01.948  INFO [socialMedia,,,,] 22771 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-08 17:00:01.950  INFO [socialMedia,,,,] 22771 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2960 ms
+2025-02-08 17:00:03.171  WARN [socialMedia,,,,] 22771 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-08 17:00:03.220  INFO [socialMedia,,,,] 22771 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-08 17:00:03.343  INFO [socialMedia,,,,] 22771 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-08 17:00:03.432  WARN [socialMedia,,,,] 22771 --- [           main] liquibase.util                           : Failed to perform a method call for SnakeYaml because the version of SnakeYaml being used is too old. Consider upgrading to a SnakeYaml version equal to or newer than 1.32, by downloading and installing a newer version of Liquibase (which includes a newer version of SnakeYaml). Loading particularly large JSON and YAML documents (like snapshots) in Liquibase may fail if SnakeYaml is not upgraded.
+
+java.lang.NoSuchMethodError: 'void org.yaml.snakeyaml.LoaderOptions.setCodePointLimit(int)'
+	at liquibase.util.SnakeYamlUtil.lambda$setCodePointLimitSafely$0(SnakeYamlUtil.java:23)
+	at liquibase.util.SnakeYamlUtil.safelyCallNewSnakeYamlMethod(SnakeYamlUtil.java:39)
+	at liquibase.util.SnakeYamlUtil.setCodePointLimitSafely(SnakeYamlUtil.java:23)
+	at liquibase.parser.core.yaml.YamlParser.createLoaderOptions(YamlParser.java:16)
+	at liquibase.parser.core.yaml.YamlChangeLogParser.parse(YamlChangeLogParser.java:26)
+	at liquibase.Liquibase.getDatabaseChangeLog(Liquibase.java:607)
+	at liquibase.Liquibase.getDatabaseChangeLog(Liquibase.java:591)
+	at liquibase.Liquibase$16.run(Liquibase.java:2290)
+	at liquibase.Scope.lambda$child$0(Scope.java:187)
+	at liquibase.Scope.child(Scope.java:196)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.Scope.child(Scope.java:165)
+	at liquibase.Liquibase.runInScope(Liquibase.java:2639)
+	at liquibase.Liquibase.listUnrunChangeSets(Liquibase.java:2286)
+	at liquibase.Liquibase.isUpToDateFastCheck(Liquibase.java:506)
+	at liquibase.Liquibase.lambda$update$1(Liquibase.java:237)
+	at liquibase.Scope.lambda$child$0(Scope.java:187)
+	at liquibase.Scope.child(Scope.java:196)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.Scope.child(Scope.java:165)
+	at liquibase.Liquibase.runInScope(Liquibase.java:2639)
+	at liquibase.Liquibase.update(Liquibase.java:236)
+	at liquibase.Liquibase.update(Liquibase.java:221)
+	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:329)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:284)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1853)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1790)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:311)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:227)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveNamedBean(DefaultListableBeanFactory.java:1175)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveBean(DefaultListableBeanFactory.java:420)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBean(DefaultListableBeanFactory.java:349)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBean(DefaultListableBeanFactory.java:342)
+	at org.springframework.orm.jpa.EntityManagerFactoryUtils.findEntityManagerFactory(EntityManagerFactoryUtils.java:121)
+	at org.springframework.orm.jpa.EntityManagerFactoryAccessor.setBeanFactory(EntityManagerFactoryAccessor.java:155)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeAwareMethods(AbstractAutowireCapableBeanFactory.java:1816)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1781)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1307)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1227)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:884)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:788)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:538)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1336)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1176)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:556)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.addCandidateEntry(DefaultListableBeanFactory.java:1525)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1489)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveMultipleBeans(DefaultListableBeanFactory.java:1378)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1265)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1227)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.inject(AutowiredAnnotationBeanPostProcessor.java:715)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1420)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:408)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1336)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1176)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:556)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1307)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1227)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.inject(AutowiredAnnotationBeanPostProcessor.java:715)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1420)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:408)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1336)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1176)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:556)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeanByName(AbstractAutowireCapableBeanFactory.java:453)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:527)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:497)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:650)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:239)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:318)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1420)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1307)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1227)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:521)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:497)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:650)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:239)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:318)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1420)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:211)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:174)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:169)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAdaptableBeans(ServletContextInitializerBeans.java:154)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:86)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:255)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:229)
+	at org.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:53)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5128)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:148)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:843)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:148)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:421)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:930)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:486)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:123)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:104)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:437)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:191)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:178)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:158)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:545)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at ncl.yujiaqi.LauncherApplication.main(LauncherApplication.java:24)
+
+2025-02-08 17:00:03.673  INFO [socialMedia,,,,] 22771 --- [           main] liquibase.changelog                      : Reading from socialMedia.DATABASECHANGELOG
+2025-02-08 17:00:03.681  INFO [socialMedia,,,,] 22771 --- [           main] liquibase.executor                       : Changelog query completed.
+2025-02-08 17:00:03.758  INFO [socialMedia,,,,] 22771 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2025-02-08 17:00:03.765  INFO [socialMedia,,,,] 22771 --- [           main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2025-02-08 17:00:03.871  INFO [socialMedia,,,,] 22771 --- [         task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-08 17:00:03.908  INFO [socialMedia,,,,] 22771 --- [         task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.21.Final
+2025-02-08 17:00:04.032  INFO [socialMedia,,,,] 22771 --- [         task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2025-02-08 17:00:04.111  INFO [socialMedia,,,,] 22771 --- [         task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2025-02-08 17:00:04.160  INFO [socialMedia,,,,] 22771 --- [           main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 59cb28d0-96e2-4811-9f40-bd765796c300
+
+2025-02-08 17:00:04.216  INFO [socialMedia,,,,] 22771 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@74797b90, org.springframework.security.web.context.SecurityContextPersistenceFilter@104392ba, org.springframework.security.web.header.HeaderWriterFilter@5862dda4, ncl.yujiaqi.system.common.filter.JwtAuthenticationFilter@36885319, org.springframework.security.web.authentication.logout.LogoutFilter@53d2b827, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@6369d01c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5c1687d1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@21ed4a51, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7676b2b9, org.springframework.security.web.session.SessionManagementFilter@fe09374, org.springframework.security.web.access.ExceptionTranslationFilter@70cac22a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@22dc9d46]
+2025-02-08 17:00:04.248  INFO [socialMedia,,,,] 22771 --- [         task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-02-08 17:00:04.255  INFO [socialMedia,,,,] 22771 --- [         task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-08 17:00:05.043  INFO [socialMedia,,,,] 22771 --- [           main] org.redisson.Version                     : Redisson 3.13.6
+2025-02-08 17:00:05.321  INFO [socialMedia,,,,] 22771 --- [sson-netty-2-16] o.r.c.pool.MasterPubSubConnectionPool    : 1 connections initialized for /127.0.0.1:6379
+2025-02-08 17:00:05.428  INFO [socialMedia,,,,] 22771 --- [sson-netty-2-19] o.r.c.pool.MasterConnectionPool          : 24 connections initialized for /127.0.0.1:6379
+2025-02-08 17:00:05.952  INFO [socialMedia,,,,] 22771 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2025-02-08 17:00:06.010  INFO [socialMedia,,,,] 22771 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8088 (http) with context path ''
+2025-02-08 17:00:06.012  INFO [socialMedia,,,,] 22771 --- [           main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2025-02-08 17:00:06.013  INFO [socialMedia,,,,] 22771 --- [           main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2025-02-08 17:00:06.036  INFO [socialMedia,,,,] 22771 --- [           main] ncl.yujiaqi.LauncherApplication          : Started LauncherApplication in 7.786 seconds (JVM running for 9.175)
+2025-02-08 17:00:06.043  INFO [socialMedia,,,,] 22771 --- [           main] ncl.yujiaqi.LauncherApplication          : Start OK
+2025-02-08 17:00:06.302  INFO [socialMedia,,,,] 22771 --- [(6)-10.59.7.138] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-08 17:00:06.303  INFO [socialMedia,,,,] 22771 --- [(6)-10.59.7.138] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-08 17:00:06.310  INFO [socialMedia,,,,] 22771 --- [(6)-10.59.7.138] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2025-02-08 18:39:44.607  INFO [socialMedia,,,,] 22771 --- [extShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-02-08 18:39:44.615  INFO [socialMedia,,,,] 22771 --- [extShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2025-02-08 18:39:44.615  INFO [socialMedia,,,,] 22771 --- [extShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2025-02-08 18:39:44.618  INFO [socialMedia,,,,] 22771 --- [extShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-08 18:39:44.624  INFO [socialMedia,,,,] 22771 --- [extShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-08 18:39:51.478  INFO [socialMedia,,,,] 23842 --- [           main] ncl.yujiaqi.LauncherApplication          : Starting LauncherApplication on newhuaweiapstudent-10-59-7-138.ncl.ac.uk with PID 23842 (/Users/yujiaqi/personal_source/IdeaProjects/ncl/SocialMediaPlatform/SocialMediaPlatform/launcher/target/classes started by yujiaqi in /Users/yujiaqi/personal_source/IdeaProjects/ncl/SocialMediaPlatform/SocialMediaPlatform)
+2025-02-08 18:39:51.482  INFO [socialMedia,,,,] 23842 --- [           main] ncl.yujiaqi.LauncherApplication          : No active profile set, falling back to default profiles: default
+2025-02-08 18:39:52.821  INFO [socialMedia,,,,] 23842 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2025-02-08 18:39:52.825  INFO [socialMedia,,,,] 23842 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2025-02-08 18:39:52.870  INFO [socialMedia,,,,] 23842 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 35ms. Found 0 JPA repository interfaces.
+2025-02-08 18:39:52.897  INFO [socialMedia,,,,] 23842 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2025-02-08 18:39:52.897  INFO [socialMedia,,,,] 23842 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-02-08 18:39:52.910  INFO [socialMedia,,,,] 23842 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7ms. Found 0 Redis repository interfaces.
+2025-02-08 18:39:53.613  INFO [socialMedia,,,,] 23842 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8088 (http)
+2025-02-08 18:39:53.711  INFO [socialMedia,,,,] 23842 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-08 18:39:53.717  INFO [socialMedia,,,,] 23842 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.38]
+2025-02-08 18:39:53.905  INFO [socialMedia,,,,] 23842 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-08 18:39:53.906  INFO [socialMedia,,,,] 23842 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2314 ms
+2025-02-08 18:39:54.978  WARN [socialMedia,,,,] 23842 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-08 18:39:55.027  INFO [socialMedia,,,,] 23842 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-08 18:39:55.140  INFO [socialMedia,,,,] 23842 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-08 18:39:55.237  WARN [socialMedia,,,,] 23842 --- [           main] liquibase.util                           : Failed to perform a method call for SnakeYaml because the version of SnakeYaml being used is too old. Consider upgrading to a SnakeYaml version equal to or newer than 1.32, by downloading and installing a newer version of Liquibase (which includes a newer version of SnakeYaml). Loading particularly large JSON and YAML documents (like snapshots) in Liquibase may fail if SnakeYaml is not upgraded.
+
+java.lang.NoSuchMethodError: 'void org.yaml.snakeyaml.LoaderOptions.setCodePointLimit(int)'
+	at liquibase.util.SnakeYamlUtil.lambda$setCodePointLimitSafely$0(SnakeYamlUtil.java:23)
+	at liquibase.util.SnakeYamlUtil.safelyCallNewSnakeYamlMethod(SnakeYamlUtil.java:39)
+	at liquibase.util.SnakeYamlUtil.setCodePointLimitSafely(SnakeYamlUtil.java:23)
+	at liquibase.parser.core.yaml.YamlParser.createLoaderOptions(YamlParser.java:16)
+	at liquibase.parser.core.yaml.YamlChangeLogParser.parse(YamlChangeLogParser.java:26)
+	at liquibase.Liquibase.getDatabaseChangeLog(Liquibase.java:607)
+	at liquibase.Liquibase.getDatabaseChangeLog(Liquibase.java:591)
+	at liquibase.Liquibase$16.run(Liquibase.java:2290)
+	at liquibase.Scope.lambda$child$0(Scope.java:187)
+	at liquibase.Scope.child(Scope.java:196)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.Scope.child(Scope.java:165)
+	at liquibase.Liquibase.runInScope(Liquibase.java:2639)
+	at liquibase.Liquibase.listUnrunChangeSets(Liquibase.java:2286)
+	at liquibase.Liquibase.isUpToDateFastCheck(Liquibase.java:506)
+	at liquibase.Liquibase.lambda$update$1(Liquibase.java:237)
+	at liquibase.Scope.lambda$child$0(Scope.java:187)
+	at liquibase.Scope.child(Scope.java:196)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.Scope.child(Scope.java:165)
+	at liquibase.Liquibase.runInScope(Liquibase.java:2639)
+	at liquibase.Liquibase.update(Liquibase.java:236)
+	at liquibase.Liquibase.update(Liquibase.java:221)
+	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:329)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:284)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1853)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1790)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:311)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:227)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveNamedBean(DefaultListableBeanFactory.java:1175)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveBean(DefaultListableBeanFactory.java:420)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBean(DefaultListableBeanFactory.java:349)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBean(DefaultListableBeanFactory.java:342)
+	at org.springframework.orm.jpa.EntityManagerFactoryUtils.findEntityManagerFactory(EntityManagerFactoryUtils.java:121)
+	at org.springframework.orm.jpa.EntityManagerFactoryAccessor.setBeanFactory(EntityManagerFactoryAccessor.java:155)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeAwareMethods(AbstractAutowireCapableBeanFactory.java:1816)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1781)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1307)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1227)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:884)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:788)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:538)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1336)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1176)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:556)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.addCandidateEntry(DefaultListableBeanFactory.java:1525)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1489)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveMultipleBeans(DefaultListableBeanFactory.java:1378)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1265)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1227)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.inject(AutowiredAnnotationBeanPostProcessor.java:715)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1420)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:408)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1336)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1176)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:556)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1307)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1227)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.inject(AutowiredAnnotationBeanPostProcessor.java:715)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1420)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:408)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1336)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1176)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:556)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeanByName(AbstractAutowireCapableBeanFactory.java:453)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:527)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:497)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:650)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:239)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:318)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1420)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1307)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1227)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:521)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:497)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:650)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:239)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:318)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1420)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:211)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:174)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:169)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAdaptableBeans(ServletContextInitializerBeans.java:154)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:86)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:255)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:229)
+	at org.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:53)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5128)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:148)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:843)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:148)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:421)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:930)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:486)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:123)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:104)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:437)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:191)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:178)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:158)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:545)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at ncl.yujiaqi.LauncherApplication.main(LauncherApplication.java:24)
+
+2025-02-08 18:39:55.487  INFO [socialMedia,,,,] 23842 --- [           main] liquibase.changelog                      : Reading from socialMedia.DATABASECHANGELOG
+2025-02-08 18:39:55.497  INFO [socialMedia,,,,] 23842 --- [           main] liquibase.executor                       : Changelog query completed.
+2025-02-08 18:39:55.581  INFO [socialMedia,,,,] 23842 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2025-02-08 18:39:55.588  INFO [socialMedia,,,,] 23842 --- [           main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2025-02-08 18:39:55.635  INFO [socialMedia,,,,] 23842 --- [         task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-08 18:39:55.677  INFO [socialMedia,,,,] 23842 --- [         task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.21.Final
+2025-02-08 18:39:55.784  INFO [socialMedia,,,,] 23842 --- [         task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2025-02-08 18:39:55.855  INFO [socialMedia,,,,] 23842 --- [         task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2025-02-08 18:39:55.896  INFO [socialMedia,,,,] 23842 --- [           main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: d083c0a4-7ebe-4dd9-98ea-a9a8df3edbc2
+
+2025-02-08 18:39:55.945  INFO [socialMedia,,,,] 23842 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@35d2312f, org.springframework.security.web.context.SecurityContextPersistenceFilter@46290193, org.springframework.security.web.header.HeaderWriterFilter@7d2be319, ncl.yujiaqi.system.common.filter.JwtAuthenticationFilter@5cdc8499, org.springframework.security.web.authentication.logout.LogoutFilter@21ed4a51, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@25ee3caa, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2fc435e9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2911db81, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1b26fac2, org.springframework.security.web.session.SessionManagementFilter@2dfd157b, org.springframework.security.web.access.ExceptionTranslationFilter@5759edff, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@30811f91]
+2025-02-08 18:39:55.986  INFO [socialMedia,,,,] 23842 --- [         task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-02-08 18:39:55.992  INFO [socialMedia,,,,] 23842 --- [         task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-08 18:39:56.717  INFO [socialMedia,,,,] 23842 --- [           main] org.redisson.Version                     : Redisson 3.13.6
+2025-02-08 18:39:56.973  INFO [socialMedia,,,,] 23842 --- [sson-netty-2-13] o.r.c.pool.MasterPubSubConnectionPool    : 1 connections initialized for /127.0.0.1:6379
+2025-02-08 18:39:57.054  INFO [socialMedia,,,,] 23842 --- [sson-netty-2-19] o.r.c.pool.MasterConnectionPool          : 24 connections initialized for /127.0.0.1:6379
+2025-02-08 18:39:57.557  INFO [socialMedia,,,,] 23842 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2025-02-08 18:39:57.611  INFO [socialMedia,,,,] 23842 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8088 (http) with context path ''
+2025-02-08 18:39:57.614  INFO [socialMedia,,,,] 23842 --- [           main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2025-02-08 18:39:57.615  INFO [socialMedia,,,,] 23842 --- [           main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2025-02-08 18:39:57.635  INFO [socialMedia,,,,] 23842 --- [           main] ncl.yujiaqi.LauncherApplication          : Started LauncherApplication in 6.526 seconds (JVM running for 7.723)
+2025-02-08 18:39:57.640  INFO [socialMedia,,,,] 23842 --- [           main] ncl.yujiaqi.LauncherApplication          : Start OK
+2025-02-08 18:39:57.815  INFO [socialMedia,,,,] 23842 --- [(1)-10.59.7.138] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-08 18:39:57.816  INFO [socialMedia,,,,] 23842 --- [(1)-10.59.7.138] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-08 18:39:57.827  INFO [socialMedia,,,,] 23842 --- [(1)-10.59.7.138] o.s.web.servlet.DispatcherServlet        : Completed initialization in 11 ms
+2025-02-08 18:41:40.962 ERROR [socialMedia,,,,] 23842 --- [0.0-8088-exec-2] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+
+ncl.yujiaqi.system.common.exception.SMException: Invalid token
+	at ncl.yujiaqi.system.common.exception.SMException.build(SMException.java:33)
+	at ncl.yujiaqi.system.common.filter.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:59)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+
+2025-02-08 18:43:17.357 ERROR [socialMedia,,,,] 23842 --- [0.0-8088-exec-3] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+
+ncl.yujiaqi.system.common.exception.SMException: Invalid token
+	at ncl.yujiaqi.system.common.exception.SMException.build(SMException.java:33)
+	at ncl.yujiaqi.system.common.filter.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:59)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+
+2025-02-08 18:46:26.852 ERROR [socialMedia,,,,] 23842 --- [0.0-8088-exec-4] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+
+ncl.yujiaqi.system.common.exception.SMException: Invalid token
+	at ncl.yujiaqi.system.common.exception.SMException.build(SMException.java:33)
+	at ncl.yujiaqi.system.common.filter.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:59)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+
+2025-02-08 18:46:53.700 ERROR [socialMedia,,,,] 23842 --- [0.0-8088-exec-5] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+
+ncl.yujiaqi.system.common.exception.SMException: Invalid token
+	at ncl.yujiaqi.system.common.exception.SMException.build(SMException.java:33)
+	at ncl.yujiaqi.system.common.filter.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:59)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+
+2025-02-08 18:47:34.089 ERROR [socialMedia,,,,] 23842 --- [0.0-8088-exec-6] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+
+ncl.yujiaqi.system.common.exception.SMException: Invalid token
+	at ncl.yujiaqi.system.common.exception.SMException.build(SMException.java:33)
+	at ncl.yujiaqi.system.common.filter.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:59)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+
+2025-02-08 18:47:48.146 DEBUG [socialMedia,,,,] 23842 --- [0.0-8088-exec-8] n.y.s.mapper.UserMapper.selectByEmail    : ==>  Preparing: SELECT * FROM user WHERE deleted = 0 AND email = ?
+2025-02-08 18:47:48.174 DEBUG [socialMedia,,,,] 23842 --- [0.0-8088-exec-8] n.y.s.mapper.UserMapper.selectByEmail    : ==> Parameters: user@example.com(String)
+2025-02-08 18:47:48.213 DEBUG [socialMedia,,,,] 23842 --- [0.0-8088-exec-8] n.y.s.mapper.UserMapper.selectByEmail    : <==      Total: 1
+2025-02-08 18:47:48.215 DEBUG [socialMedia,,,,] 23842 --- [0.0-8088-exec-8] n.y.s.mapper.UserMapper.selectByPhone    : ==>  Preparing: SELECT * FROM user WHERE deleted = 0 AND phone = ?
+2025-02-08 18:47:48.215 DEBUG [socialMedia,,,,] 23842 --- [0.0-8088-exec-8] n.y.s.mapper.UserMapper.selectByPhone    : ==> Parameters: user@example.com(String)
+2025-02-08 18:47:48.217 DEBUG [socialMedia,,,,] 23842 --- [0.0-8088-exec-8] n.y.s.mapper.UserMapper.selectByPhone    : <==      Total: 0
+2025-02-08 18:47:48.353 DEBUG [socialMedia,,,,] 23842 --- [0.0-8088-exec-8] n.y.s.m.UserRoleMapper.selectByUserId    : ==>  Preparing: select * from user_role where deleted = 0 and user_id = ?
+2025-02-08 18:47:48.354 DEBUG [socialMedia,,,,] 23842 --- [0.0-8088-exec-8] n.y.s.m.UserRoleMapper.selectByUserId    : ==> Parameters: 5(Long)
+2025-02-08 18:47:48.364 DEBUG [socialMedia,,,,] 23842 --- [0.0-8088-exec-8] n.y.s.m.UserRoleMapper.selectByUserId    : <==      Total: 1

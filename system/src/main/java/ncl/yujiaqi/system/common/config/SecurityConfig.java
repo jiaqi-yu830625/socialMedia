@@ -8,6 +8,7 @@ import ncl.yujiaqi.system.util.JwtTokenUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -59,10 +60,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .authorizeRequests()
                 // 只需要登录就能访问的请求
-                .antMatchers("/user/register", "/login/login", "/api/login/login").permitAll()
-//                .antMatchers("/login/login").access("authenticated")
+                .antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
+                .antMatchers("/user/register", "/login/login").permitAll()
                 // 剩余所有请求都要经过认证且判断权限
-                .anyRequest().access("authenticated and @resourceCertification.access(request)")
+                .anyRequest().authenticated()
                 .and()
                 .exceptionHandling()
                 .authenticationEntryPoint(authenticationEntryPoint())
