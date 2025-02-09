@@ -19,4 +19,6 @@ public interface UserFollowsService extends IService<UserFollows> {
     Boolean delete(Long id);
 
     UserFollows addById(Long followUserId);
+
+    Boolean cancelById(Long followUserId);
 }

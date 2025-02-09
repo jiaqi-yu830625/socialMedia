@@ -1,0 +1,1 @@
+alter table `dyn_user_follows` drop column followee_id ;

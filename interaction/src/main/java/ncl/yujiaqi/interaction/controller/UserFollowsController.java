@@ -30,4 +30,13 @@ public class UserFollowsController {
     public R<UserFollows> add(Long followUserId){
         return R.success(userFollowsService.addById(followUserId));
     }
+
+     @PostMapping(value = "/unfollow")
+    @ApiOperation(tags="unfollow" ,value = "unfollow user")
+    public R cancel(Long followUserId){
+         userFollowsService.cancelById(followUserId);
+        return R.success();
+    }
+
+
 }

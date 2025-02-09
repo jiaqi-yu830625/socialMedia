@@ -9,7 +9,6 @@
         <result column="update_time" property="updateTime"/>
         <result column="deleted" property="deleted"/>
         <result column="post_id" property="postId"/>
-        <result column="url" property="url"/>
     </resultMap>
     <select id="deleteByPostId">
         update dyn_post_img
@@ -22,7 +21,7 @@
         from dyn_post_img
         where deleted = 0
         and post_id in
-        <foreach collection="postIds" index="postId" open="(" close=")" separator=",">
+        <foreach collection="postIds" item="postId" index="postId" open="(" close=")" separator=",">
             #{postId}
         </foreach>
     </select>

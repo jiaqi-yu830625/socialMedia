@@ -6,15 +6,9 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import ncl.yujiaqi.dynamic.domain.dto.CommentUserDTO;
 import ncl.yujiaqi.dynamic.domain.dto.PostCommentDTO;
 import ncl.yujiaqi.dynamic.domain.dto.PostDTO;
-import ncl.yujiaqi.dynamic.domain.entity.Post;
-import ncl.yujiaqi.dynamic.domain.entity.PostComment;
-import ncl.yujiaqi.dynamic.domain.entity.PostImg;
-import ncl.yujiaqi.dynamic.domain.entity.PostLikes;
+import ncl.yujiaqi.dynamic.domain.entity.*;
 import ncl.yujiaqi.dynamic.mapper.PostMapper;
-import ncl.yujiaqi.dynamic.service.PostCommentService;
-import ncl.yujiaqi.dynamic.service.PostImgService;
-import ncl.yujiaqi.dynamic.service.PostLikesService;
-import ncl.yujiaqi.dynamic.service.PostService;
+import ncl.yujiaqi.dynamic.service.*;
 import ncl.yujiaqi.system.common.enums.ResultEnum;
 import ncl.yujiaqi.system.common.exception.SMException;
 import ncl.yujiaqi.system.service.UserService;
@@ -23,12 +17,9 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import javax.transaction.Transactional;
 import java.util.*;
-import java.util.stream.Collectors;
 
-import static java.util.Collections.singletonList;
 import static java.util.stream.Collectors.groupingBy;
 import static java.util.stream.Collectors.toList;
-import static org.springframework.data.util.Pair.toMap;
 
 /**
  * post table
@@ -42,6 +33,8 @@ public class PostServiceImpl extends ServiceImpl<PostMapper, Post> implements Po
     private PostMapper postMapper;
     @Resource
     private PostImgService postImgService;
+    @Resource
+    private PostImgDataService postImgDataService;
     @Resource
     private PostLikesService postLikesService;
     @Resource
@@ -79,13 +72,23 @@ public class PostServiceImpl extends ServiceImpl<PostMapper, Post> implements Po
         List<Post> posts = postMapper.getByUserId(userId);
         // search postImgs with postIdList
         List<Long> postIds = posts.stream().map(Post::getId).collect(toList());
-        Map<Long, List<PostImg>> imgMap = postImgService.selectByPostIds(postIds).stream()
-                .collect(groupingBy(PostImg::getPostId));
 
+        // search imgDataList
+        List<PostImg> postImgs = postImgService.selectByPostIds(postIds);
+        List<Long> imgDataIds = postImgs.stream().map(PostImg::getFileId).collect(toList());
+        List<PostImgData> imgDataList;
+        if (!imgDataIds.isEmpty()) {
+            imgDataList = postImgDataService.listByIds(imgDataIds);
+        } else {
+            imgDataList = new ArrayList<>();
+        }
+
+        Map<Long, List<PostImg>> imgMap = postImgs.stream().collect(groupingBy(PostImg::getPostId));
         List<PostDTO> dtoList = new ArrayList<>(posts.size());
         posts.forEach(post -> {
             List<Long> imgList = Optional.ofNullable(imgMap.get(post.getId())).orElseGet(ArrayList::new).stream().map(PostImg::getFileId).collect(toList());
-            dtoList.add(new PostDTO(post.getId(), post.getUserId(), post.getContent(), imgList, post.getCreateTime()));
+            List<PostImgData> dataList = imgDataList.stream().filter(data -> imgList.contains(data.getId())).collect(toList());
+            dtoList.add(new PostDTO(post.getId(), post.getUserId(), post.getContent(), imgList, dataList, post.getCreateTime()));
         });
         return dtoList;
     }
@@ -122,6 +125,10 @@ public class PostServiceImpl extends ServiceImpl<PostMapper, Post> implements Po
 
         // search images
         List<Long> postImgs = postImgService.selectByPostId(post.getId()).stream().map(PostImg::getFileId).collect(toList());
+        List<PostImgData> imgDataList = new ArrayList<>();
+        if (!postImgs.isEmpty()) {
+            imgDataList = postImgDataService.listByIds(postImgs);
+        }
 
         // search post-likes and post-comments
         List<PostLikes> postLikes = postLikesService.selectByPostId(post.getId());
@@ -132,7 +139,7 @@ public class PostServiceImpl extends ServiceImpl<PostMapper, Post> implements Po
         List<Long> commentUserIds = postComments.stream().map(PostComment::getUserId).collect(toList());
         List<CommentUserDTO> commentUserDTOS = postCommentService.listCommentUserByIds(commentUserIds);
 
-        PostDTO postDTO = new PostDTO(post.getId(), post.getUserId(), post.getContent(), postImgs, post.getCreateTime());
+        PostDTO postDTO = new PostDTO(post.getId(), post.getUserId(), post.getContent(), postImgs, imgDataList, post.getCreateTime());
         postDTO.setUser(userService.getById(postDTO.getUserId()))
                 .setPostLikes(postLikes)
                 .setPostComments(postCommentDTOS)

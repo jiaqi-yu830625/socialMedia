@@ -10,7 +10,15 @@
         <result column="deleted" property="deleted"/>
         <result column="user_id" property="userId"/>
         <result column="follower_id" property="followerId"/>
-        <result column="followee_id" property="followeeId"/>
     </resultMap>
+
+    <select id="selectByUserAndFollowUser" resultType="ncl.yujiaqi.interaction.domain.entity.UserFollows">
+        select *
+        from dyn_user_follows
+        where deleted = 0
+          and user_id = #{userId}
+          and follower_id = #{followUserId}
+    </select>
+
 
 </mapper>

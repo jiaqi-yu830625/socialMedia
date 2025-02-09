@@ -4,7 +4,10 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import ncl.yujiaqi.interaction.domain.entity.UserFollows;
 import ncl.yujiaqi.interaction.mapper.UserFollowsMapper;
 import ncl.yujiaqi.interaction.service.UserFollowsService;
+import ncl.yujiaqi.system.common.enums.ResultEnum;
+import ncl.yujiaqi.system.common.exception.SMException;
 import ncl.yujiaqi.system.domain.dto.UserDTO;
+import ncl.yujiaqi.system.domain.entity.User;
 import ncl.yujiaqi.system.service.UserService;
 import org.springframework.stereotype.Service;
 
@@ -41,9 +44,25 @@ public class UserFollowsServiceImpl extends ServiceImpl<UserFollowsMapper, UserF
 
     @Override
     public UserFollows addById(Long followUserId) {
+        // check followUser valid
+        User followUser = userService.getById(followUserId);
+        if (followUser == null || followUser.getDeleted() == 1) {
+            throw SMException.build(ResultEnum.DATA_NOT_FOUND, "This user isn't exist!");
+        }
         UserDTO userDTO = userService.getCurrentUser();
         Long userId = userDTO.getId();
-//todo
-        return new UserFollows();
+
+        return new UserFollows(userId, followUserId);
+    }
+
+    @Override
+    public Boolean cancelById(Long followUserId) {
+        UserDTO userDTO = userService.getCurrentUser();
+        Long userId = userDTO.getId();
+        UserFollows userFollows = baseMapper.selectByUserAndFollowUser(userId, followUserId);
+        if (userFollows != null && userFollows.getId() != null) {
+            delete(userFollows.getId());
+        }
+        return true;
     }
 }

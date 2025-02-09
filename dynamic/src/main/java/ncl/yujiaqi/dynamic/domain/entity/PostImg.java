@@ -30,14 +30,7 @@ public class PostImg extends BaseEntity {
     @ApiModelProperty(value = "post id")
     private Long postId;
 
-    @ApiModelProperty(value = "image url")
-    private String url;
-
     @ApiModelProperty(value = "file id")
     private Long fileId;
 
-    public PostImg(Long postId, Long fileId) {
-        this.postId = postId;
-        this.fileId = fileId;
-    }
 }

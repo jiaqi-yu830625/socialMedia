@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
+import ncl.yujiaqi.dynamic.domain.entity.PostImgData;
 import ncl.yujiaqi.dynamic.domain.entity.PostLikes;
 import ncl.yujiaqi.system.domain.entity.BaseEntity;
 import ncl.yujiaqi.system.domain.entity.User;
@@ -35,6 +36,7 @@ public class PostDTO extends BaseEntity {
 
     @ApiModelProperty(value = "post images")
     private List<Long> imageDataIdList;
+    private List<PostImgData> imgDataList;
 
     @ApiModelProperty(value = "public,friends,private")
     private String visibility;
@@ -46,11 +48,12 @@ public class PostDTO extends BaseEntity {
     private List<PostCommentDTO> postComments;
     private List<CommentUserDTO> commentUsers;
 
-    public PostDTO(Long id, Long userId, String content, List<Long> imageDataIdList, Date createTime) {
+    public PostDTO(Long id, Long userId, String content, List<Long> imageDataIdList, List<PostImgData> imgDataList, Date createTime) {
         super.setId(id);
         super.setCreateTime(createTime);
         this.userId = userId;
         this.content = content;
         this.imageDataIdList = imageDataIdList;
+        this.imgDataList = imgDataList;
     }
 }

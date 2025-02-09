@@ -26,3 +26,21 @@ databaseChangeLog:
             path: classpath:db.changelog/mysql/2025020602_update_img.sql
       comment: update dyn_post_img add file_id
 
+  - changeSet:
+      id: 2025020901_update_user_follow
+      author: yujiaqi
+      changes:
+        - sqlFile:
+            encoding: utf8
+            path: classpath:db.changelog/mysql/2025020901_update_user_follow.sql
+      comment: update user_follow delete followee_id
+
+  - changeSet:
+      id: 2025020901_update_img
+      author: yujiaqi
+      changes:
+        - sqlFile:
+            encoding: utf8
+            path: classpath:db.changelog/mysql/2025020902_update_img.sql
+      comment: update post img delete url
+

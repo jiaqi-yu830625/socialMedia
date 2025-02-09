@@ -4,10 +4,12 @@ import cn.hutool.core.bean.BeanUtil;
 import ncl.yujiaqi.dynamic.domain.dto.PostImgDTO;
 import ncl.yujiaqi.dynamic.domain.entity.PostImg;
 import ncl.yujiaqi.dynamic.mapper.PostImgMapper;
+import ncl.yujiaqi.dynamic.service.PostImgDataService;
 import ncl.yujiaqi.dynamic.service.PostImgService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -22,6 +24,8 @@ import java.util.List;
 @Service
 public class PostImgServiceImpl extends ServiceImpl<PostImgMapper, PostImg> implements PostImgService {
 
+    @Resource
+    private PostImgDataService postImgDataService;
 
     @Override
     public PostImg add(PostImg postImg) {
@@ -41,7 +45,6 @@ public class PostImgServiceImpl extends ServiceImpl<PostImgMapper, PostImg> impl
     }
 
     @Override
-    @Transactional
     public List<PostImg> addList(Long postId, List<Long> imageDataIds) {
         List<PostImg> imgs = new ArrayList<>(imageDataIds.size());
         imageDataIds.forEach(dataId -> {
@@ -75,6 +78,9 @@ public class PostImgServiceImpl extends ServiceImpl<PostImgMapper, PostImg> impl
     public PostImgDTO convertToDto(PostImg img) {
         PostImgDTO postImgDTO = new PostImgDTO();
         BeanUtil.copyProperties(img, postImgDTO);
+        if (img.getFileId() != null) {
+            postImgDTO.setImgData(postImgDataService.getById(img.getFileId()));
+        }
         return postImgDTO;
     }
 }

@@ -22,17 +22,9 @@ public class PostImgDTO extends BaseEntity {
     @ApiModelProperty(value = "post id")
     private Long postId;
 
-    @ApiModelProperty(value = "image url")
-    private String url;
-
     @ApiModelProperty(value = "file id")
     private Long fileId;
 
     private PostImgData imgData;
 
-    public PostImgDTO(Long id, Long postId, String url, Long fileId) {
-        this.postId = postId;
-        this.url = url;
-        this.fileId = fileId;
-    }
 }

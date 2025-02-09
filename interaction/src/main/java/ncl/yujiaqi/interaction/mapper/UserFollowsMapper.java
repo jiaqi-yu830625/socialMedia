@@ -2,6 +2,7 @@ package ncl.yujiaqi.interaction.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import ncl.yujiaqi.interaction.domain.entity.UserFollows;
+import org.springframework.data.repository.query.Param;
 
 /**
  * <p>
@@ -13,4 +14,5 @@ import ncl.yujiaqi.interaction.domain.entity.UserFollows;
  */
 public interface UserFollowsMapper extends BaseMapper<UserFollows> {
 
+    UserFollows selectByUserAndFollowUser(@Param("userId") Long userId, @Param("followUserId") Long followUserId);
 }

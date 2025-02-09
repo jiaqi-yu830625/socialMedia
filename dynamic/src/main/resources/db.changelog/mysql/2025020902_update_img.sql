@@ -1,0 +1,1 @@
+alter table `dyn_post_img` drop column url ;
