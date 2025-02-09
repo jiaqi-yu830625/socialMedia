@@ -40,3 +40,6 @@ front-end:
 2. npm i
 3. npm start serve
 
+# link in github
+https://github.com/jiaqi-yu830625/socialMedia
+
