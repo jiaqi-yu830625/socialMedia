@@ -1,4 +1,6 @@
 databaseChangeLog:
+  - include:
+      file: classpath:db.changelog/changelog-system.yaml
   - changeSet:
       id: 2025020501_init
       author: yujiaqi
