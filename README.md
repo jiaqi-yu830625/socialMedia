@@ -27,9 +27,11 @@ This project includes not only back-end API, but also a Vue front-end, where use
 back-end:
 1. Change the mysql username and password in application.yml (launcher/src/main/resources/application.yml)
    
-   url: jdbc:mysql://localhost:3306/socialMedia?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
-   username: #{yourUserName}
-   password: #{yourPassword}
+url: jdbc:mysql://localhost:3306/socialMedia?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+
+username: #{yourUserName}
+
+password: #{yourPassword}
 
 2. LauncherApplication is in the launcher module
 
