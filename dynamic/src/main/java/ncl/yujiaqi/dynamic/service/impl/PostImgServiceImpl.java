@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -53,6 +54,9 @@ public class PostImgServiceImpl extends ServiceImpl<PostImgMapper, PostImg> impl
 
     @Override
     public List<PostImg> selectByPostIds(List<Long> postIds) {
+        if (postIds.isEmpty()) {
+            return new ArrayList<>(0);
+        }
         return baseMapper.selectByPostIds(postIds);
     }
 

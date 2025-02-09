@@ -11,7 +11,7 @@
         <result column="user_id" property="userId"/>
         <result column="role_id" property="roleId"/>
     </resultMap>
-    <select id="selectByUserId" resultType="ncl.yujiaqi.system.domain.entity.Role">
+    <select id="selectByUserId" resultType="ncl.yujiaqi.system.domain.entity.UserRole">
         select *
         from user_role
         where deleted = 0

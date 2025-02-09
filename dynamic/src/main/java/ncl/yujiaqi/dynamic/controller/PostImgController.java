@@ -21,21 +21,20 @@ import java.util.Date;
  */
 @RestController
 @Api(value = "post image table", tags = "post image table")
-@RequestMapping("/post_img")
+@RequestMapping("/postImg")
 public class PostImgController {
 
     @Resource
     private PostImgDataService postImgDataService;
 
     @PostMapping("/upload")
-    public R uploadFile(@RequestParam("file") MultipartFile file) {
+    public R<PostImgData> uploadFile(@RequestParam("file") MultipartFile file) {
         try {
             PostImgData img = new PostImgData();
             img.setFileName(file.getOriginalFilename())
                     .setFileData(file.getBytes())
                     .setCreateTime(new Date());
-            postImgDataService.save(img);
-            return R.success("File uploaded successfully!");
+            return R.success(postImgDataService.add(img));
         } catch (IOException e) {
             e.printStackTrace();
             return R.fail(ResultEnum.FILE_UPLOAD_FAIL, "File upload failed!");

@@ -11,6 +11,7 @@ import ncl.yujiaqi.system.service.UserService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -49,6 +50,9 @@ public class PostLikesServiceImpl extends ServiceImpl<PostLikesMapper, PostLikes
 
     @Override
     public List<PostLikes> selectByPostIds(List<Long> postIds) {
+        if(postIds.isEmpty()){
+            return new ArrayList<>(0);
+        }
         return baseMapper.selectByPostIds(postIds);
     }
 

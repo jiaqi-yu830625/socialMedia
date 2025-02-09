@@ -57,6 +57,9 @@ public class PostServiceImpl extends ServiceImpl<PostMapper, Post> implements Po
         if (CollectionUtil.isNotEmpty(postDto.getImageDataIdList())) {
             postImgService.addList(post.getId(), postDto.getImageDataIdList());
         }
+        postDto.setUser(userService.getById(postDto.getUserId()))
+                .setId(post.getId());
+
         return postDto;
     }
 
@@ -81,7 +84,7 @@ public class PostServiceImpl extends ServiceImpl<PostMapper, Post> implements Po
 
         List<PostDTO> dtoList = new ArrayList<>(posts.size());
         posts.forEach(post -> {
-            List<Long> imgList = imgMap.get(post.getId()).stream().map(PostImg::getFileId).collect(toList());
+            List<Long> imgList = Optional.ofNullable(imgMap.get(post.getId())).orElseGet(ArrayList::new).stream().map(PostImg::getFileId).collect(toList());
             dtoList.add(new PostDTO(post.getId(), post.getUserId(), post.getContent(), imgList, post.getCreateTime()));
         });
         return dtoList;
@@ -103,7 +106,7 @@ public class PostServiceImpl extends ServiceImpl<PostMapper, Post> implements Po
                 commentsDtoMap.put(postId, postCommentService.buildCommentTree(comments)));
 
         dtos.forEach(dto ->
-                dto.setLikesNumber(likesMap.get(dto.getId()).size())
+                dto.setLikesNumber(Optional.ofNullable(likesMap.get(dto.getId())).orElseGet(ArrayList::new).size())
                         .setCommentNumber(postComments.size())
                         .setPostComments(commentsDtoMap.get(dto.getId()))
         );

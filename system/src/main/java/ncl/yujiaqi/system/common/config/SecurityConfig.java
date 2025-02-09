@@ -107,7 +107,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     private R<String> getToken(Authentication authentication) {
-        return Optional.ofNullable(authentication.getPrincipal())
+        Object principal1 = authentication.getPrincipal();
+        return Optional.ofNullable(principal1)
                 .map(principal -> (UserDTO) principal)
                 .map(JwtTokenUtils::genToken)
                 .map(R::success)

@@ -1,6 +1,7 @@
 package ncl.yujiaqi.system.util;
 
 import cn.hutool.core.date.DateUtil;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtBuilder;
 import io.jsonwebtoken.Jwts;
@@ -67,7 +68,7 @@ public class JwtTokenUtils {
      * @param token
      * @return
      */
-    public static User parseToken(String token) {
+    public static UserDTO parseToken(String token) {
         if (token == null) {
             return null;
         }
@@ -76,8 +77,8 @@ public class JwtTokenUtils {
                     .setSigningKey(generateKey())
                     .parseClaimsJws(token)
                     .getBody();
-            Long userId = (long) claims.get("USERID");
-            return staticUserService.getById(userId);
+            Integer userIdMap = claims.get("USERID", Integer.class);
+            return staticUserService.convert(staticUserService.getById(userIdMap));
         } catch (Exception e) {
             return null;
         }

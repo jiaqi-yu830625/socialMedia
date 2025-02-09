@@ -50,6 +50,9 @@ public class PostCommentServiceImpl extends ServiceImpl<PostCommentMapper, PostC
 
     @Override
     public List<PostComment> selectByPostIds(List<Long> postIds) {
+        if(postIds.isEmpty()){
+            return new ArrayList<>(0);
+        }
         return baseMapper.selectByPostIds(postIds);
     }
 

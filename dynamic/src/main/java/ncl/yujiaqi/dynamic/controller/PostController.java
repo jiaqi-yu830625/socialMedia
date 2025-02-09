@@ -37,7 +37,7 @@ public class PostController {
 
     @GetMapping(value = "/getByUserId/{userId}")
     @ApiOperation(tags = "getByUserId", value = "get posts by userId")
-    public R<List<PostDTO>> pageByUserId(@PathParam("userId") Long userId) {
+    public R<List<PostDTO>> pageByUserId(@PathVariable("userId") Long userId) {
         return R.success(postService.pageByUserId(userId));
     }
 
@@ -49,7 +49,7 @@ public class PostController {
 
     @PostMapping(value = "/deleteById/{id}")
     @ApiOperation(tags = "deleteById", value = "delete post by id")
-    public R deleteById(@PathParam("id") Long id) {
+    public R deleteById(@PathVariable("id") Long id) {
         return R.success(postService.deleteById(id));
     }
 
