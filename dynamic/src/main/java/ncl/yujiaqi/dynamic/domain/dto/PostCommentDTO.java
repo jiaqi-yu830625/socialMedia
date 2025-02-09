@@ -2,6 +2,7 @@ package ncl.yujiaqi.dynamic.domain.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 import ncl.yujiaqi.dynamic.domain.entity.PostComment;
