@@ -17,11 +17,11 @@
             <artifactId>system</artifactId>
             <version>1.0.0</version>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>ncl.yujiaqi</groupId>-->
-<!--            <artifactId>interaction</artifactId>-->
-<!--            <version>1.0.0</version>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>ncl.yujiaqi</groupId>
+            <artifactId>interaction</artifactId>
+            <version>1.0.0</version>
+        </dependency>
         <dependency>
             <groupId>ncl.yujiaqi</groupId>
             <artifactId>dynamic</artifactId>

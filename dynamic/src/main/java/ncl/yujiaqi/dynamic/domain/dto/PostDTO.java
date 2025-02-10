@@ -48,10 +48,11 @@ public class PostDTO extends BaseEntity {
     private List<PostCommentDTO> postComments;
     private List<CommentUserDTO> commentUsers;
 
-    public PostDTO(Long id, Long userId, String content, List<Long> imageDataIdList, List<PostImgData> imgDataList, Date createTime) {
+    public PostDTO(Long id, Long userId, User user, String content, List<Long> imageDataIdList, List<PostImgData> imgDataList, Date createTime) {
         super.setId(id);
         super.setCreateTime(createTime);
         this.userId = userId;
+        this.user = user;
         this.content = content;
         this.imageDataIdList = imageDataIdList;
         this.imgDataList = imgDataList;

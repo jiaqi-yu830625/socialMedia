@@ -11,6 +11,7 @@ import ncl.yujiaqi.dynamic.mapper.PostMapper;
 import ncl.yujiaqi.dynamic.service.*;
 import ncl.yujiaqi.system.common.enums.ResultEnum;
 import ncl.yujiaqi.system.common.exception.SMException;
+import ncl.yujiaqi.system.domain.entity.User;
 import ncl.yujiaqi.system.service.UserService;
 import org.springframework.stereotype.Service;
 
@@ -69,6 +70,7 @@ public class PostServiceImpl extends ServiceImpl<PostMapper, Post> implements Po
 
     @Override
     public List<PostDTO> getByUserId(Long userId) {
+        User user = userService.getById(userId);
         List<Post> posts = postMapper.getByUserId(userId);
         // search postImgs with postIdList
         List<Long> postIds = posts.stream().map(Post::getId).collect(toList());
@@ -88,7 +90,7 @@ public class PostServiceImpl extends ServiceImpl<PostMapper, Post> implements Po
         posts.forEach(post -> {
             List<Long> imgList = Optional.ofNullable(imgMap.get(post.getId())).orElseGet(ArrayList::new).stream().map(PostImg::getFileId).collect(toList());
             List<PostImgData> dataList = imgDataList.stream().filter(data -> imgList.contains(data.getId())).collect(toList());
-            dtoList.add(new PostDTO(post.getId(), post.getUserId(), post.getContent(), imgList, dataList, post.getCreateTime()));
+            dtoList.add(new PostDTO(post.getId(), post.getUserId(), user, post.getContent(), imgList, dataList, post.getCreateTime()));
         });
         return dtoList;
     }
@@ -139,7 +141,9 @@ public class PostServiceImpl extends ServiceImpl<PostMapper, Post> implements Po
         List<Long> commentUserIds = postComments.stream().map(PostComment::getUserId).collect(toList());
         List<CommentUserDTO> commentUserDTOS = postCommentService.listCommentUserByIds(commentUserIds);
 
-        PostDTO postDTO = new PostDTO(post.getId(), post.getUserId(), post.getContent(), postImgs, imgDataList, post.getCreateTime());
+        User user = userService.getById(post.getUserId());
+
+        PostDTO postDTO = new PostDTO(post.getId(), post.getUserId(), user, post.getContent(), postImgs, imgDataList, post.getCreateTime());
         postDTO.setUser(userService.getById(postDTO.getUserId()))
                 .setPostLikes(postLikes)
                 .setPostComments(postCommentDTOS)

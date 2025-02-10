@@ -4,12 +4,12 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import ncl.yujiaqi.dynamic.service.PostLikesService;
 import ncl.yujiaqi.system.common.result.R;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
-import javax.websocket.server.PathParam;
 
 /**
  * post likes table controller
@@ -19,21 +19,21 @@ import javax.websocket.server.PathParam;
  */
 @RestController
 @Api(value = "post likes table", tags = "post likes table")
-@RequestMapping("/post_likes")
+@RequestMapping("/likes")
 public class PostLikesController {
 
     @Resource
     private PostLikesService postLikesService;
 
-    @PostMapping(value = "/like/{postId}")
+    @GetMapping(value = "/like/{postId}")
     @ApiOperation(tags = "like post", value = "like post")
-    public R likePostByPostId(@PathParam("postId") Long postId) {
+    public R likePostByPostId(@PathVariable("postId") Long postId) {
         return R.success(postLikesService.addByPostId(postId));
     }
 
-    @PostMapping(value = "/unlike/{postId}")
+    @GetMapping(value = "/unlike/{postId}")
     @ApiOperation(tags = "unlike post", value = "unlike post")
-    public R unlikePostByPostId(@PathParam("postId") Long postId) {
+    public R unlikePostByPostId(@PathVariable("postId") Long postId) {
         postLikesService.deleteByUserAndPost(postId);
         return R.success();
     }
