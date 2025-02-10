@@ -19,7 +19,7 @@
         where post_id = #{postId}
     </select>
 
-    <select id="selectByPostIds" resultType="ncl.yujiaqi.dynamic.domain.entity.PostComment">
+    <select id="selectByPostIds" resultMap="BaseResultMap">
         select *
         from dyn_post_comment
         where deleted = 0

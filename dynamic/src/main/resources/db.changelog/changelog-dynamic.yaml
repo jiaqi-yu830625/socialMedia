@@ -46,3 +46,12 @@ databaseChangeLog:
             path: classpath:db.changelog/mysql/2025020902_update_img.sql
       comment: update post img delete url
 
+  - changeSet:
+      id: 2025021001_update_comment
+      author: yujiaqi
+      changes:
+        - sqlFile:
+            encoding: utf8
+            path: classpath:db.changelog/mysql/2025021001_update_comment.sql
+      comment: update post comment
+

@@ -19,4 +19,8 @@ public interface PostMapper extends BaseMapper<Post> {
     List<Post> getByUserId(@Param("userId") Long userId);
 
     void delById(@Param("id") Long id);
+
+    List<Post> selectAll();
+
+    List<Post> getByUserList(@Param("userIds")List<Long> userList);
 }

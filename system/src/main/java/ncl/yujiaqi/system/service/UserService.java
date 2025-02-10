@@ -31,4 +31,5 @@ public interface UserService extends IService<User> {
 
     UserDTO convert(User user);
 
+    User getUserById(Long id);
 }

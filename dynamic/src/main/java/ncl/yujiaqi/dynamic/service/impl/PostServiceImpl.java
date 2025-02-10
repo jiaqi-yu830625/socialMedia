@@ -11,6 +11,7 @@ import ncl.yujiaqi.dynamic.mapper.PostMapper;
 import ncl.yujiaqi.dynamic.service.*;
 import ncl.yujiaqi.system.common.enums.ResultEnum;
 import ncl.yujiaqi.system.common.exception.SMException;
+import ncl.yujiaqi.system.domain.dto.UserDTO;
 import ncl.yujiaqi.system.domain.entity.User;
 import ncl.yujiaqi.system.service.UserService;
 import org.springframework.stereotype.Service;
@@ -18,9 +19,10 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import javax.transaction.Transactional;
 import java.util.*;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.function.Function;
 
-import static java.util.stream.Collectors.groupingBy;
-import static java.util.stream.Collectors.toList;
+import static java.util.stream.Collectors.*;
 
 /**
  * post table
@@ -69,53 +71,9 @@ public class PostServiceImpl extends ServiceImpl<PostMapper, Post> implements Po
     }
 
     @Override
-    public List<PostDTO> getByUserId(Long userId) {
-        User user = userService.getById(userId);
-        List<Post> posts = postMapper.getByUserId(userId);
-        // search postImgs with postIdList
-        List<Long> postIds = posts.stream().map(Post::getId).collect(toList());
-
-        // search imgDataList
-        List<PostImg> postImgs = postImgService.selectByPostIds(postIds);
-        List<Long> imgDataIds = postImgs.stream().map(PostImg::getFileId).collect(toList());
-        List<PostImgData> imgDataList;
-        if (!imgDataIds.isEmpty()) {
-            imgDataList = postImgDataService.listByIds(imgDataIds);
-        } else {
-            imgDataList = new ArrayList<>();
-        }
-
-        Map<Long, List<PostImg>> imgMap = postImgs.stream().collect(groupingBy(PostImg::getPostId));
-        List<PostDTO> dtoList = new ArrayList<>(posts.size());
-        posts.forEach(post -> {
-            List<Long> imgList = Optional.ofNullable(imgMap.get(post.getId())).orElseGet(ArrayList::new).stream().map(PostImg::getFileId).collect(toList());
-            List<PostImgData> dataList = imgDataList.stream().filter(data -> imgList.contains(data.getId())).collect(toList());
-            dtoList.add(new PostDTO(post.getId(), post.getUserId(), user, post.getContent(), imgList, dataList, post.getCreateTime()));
-        });
-        return dtoList;
-    }
-
-    @Override
     public List<PostDTO> pageByUserId(Long userId) {
-        List<PostDTO> dtos = getByUserId(userId);
-        List<Long> postIds = dtos.stream().map(PostDTO::getId).collect(toList());
-
-        // search post-likes
-        Map<Long, List<PostLikes>> likesMap = postLikesService.selectByPostIds(postIds).stream().collect(groupingBy(PostLikes::getPostId));
-
-        // search post-comments
-        List<PostComment> postComments = postCommentService.selectByPostIds(postIds);
-        Map<Long, List<PostComment>> commentsMap = postComments.stream().collect(groupingBy(PostComment::getPostId));
-        Map<Long, List<PostCommentDTO>> commentsDtoMap = new HashMap<>(commentsMap.size());
-        commentsMap.forEach((postId, comments) ->
-                commentsDtoMap.put(postId, postCommentService.buildCommentTree(comments)));
-
-        dtos.forEach(dto ->
-                dto.setLikesNumber(Optional.ofNullable(likesMap.get(dto.getId())).orElseGet(ArrayList::new).size())
-                        .setCommentNumber(postComments.size())
-                        .setPostComments(commentsDtoMap.get(dto.getId()))
-        );
-
+        List<Post> posts = baseMapper.getByUserId(userId);
+        List<PostDTO> dtos = getByUserList(posts);
         // sort by createTime desc
         dtos = dtos.stream().sorted(Comparator.comparing(PostDTO::getCreateTime).reversed()).collect(toList());
         return dtos;
@@ -124,33 +82,9 @@ public class PostServiceImpl extends ServiceImpl<PostMapper, Post> implements Po
     @Override
     public PostDTO selectById(Long id) {
         Post post = getById(id);
+        List<PostDTO> dtos = getByUserList(Collections.singletonList(post));
 
-        // search images
-        List<Long> postImgs = postImgService.selectByPostId(post.getId()).stream().map(PostImg::getFileId).collect(toList());
-        List<PostImgData> imgDataList = new ArrayList<>();
-        if (!postImgs.isEmpty()) {
-            imgDataList = postImgDataService.listByIds(postImgs);
-        }
-
-        // search post-likes and post-comments
-        List<PostLikes> postLikes = postLikesService.selectByPostId(post.getId());
-        List<PostComment> postComments = postCommentService.selectByPostId(post.getId());
-        List<PostCommentDTO> postCommentDTOS = postCommentService.buildCommentTree(postComments);
-
-        // search comments users
-        List<Long> commentUserIds = postComments.stream().map(PostComment::getUserId).collect(toList());
-        List<CommentUserDTO> commentUserDTOS = postCommentService.listCommentUserByIds(commentUserIds);
-
-        User user = userService.getById(post.getUserId());
-
-        PostDTO postDTO = new PostDTO(post.getId(), post.getUserId(), user, post.getContent(), postImgs, imgDataList, post.getCreateTime());
-        postDTO.setUser(userService.getById(postDTO.getUserId()))
-                .setPostLikes(postLikes)
-                .setPostComments(postCommentDTOS)
-                .setLikesNumber(postLikes.size())
-                .setCommentUsers(commentUserDTOS);
-
-        return postDTO;
+        return dtos.get(0);
     }
 
     @Override
@@ -173,6 +107,83 @@ public class PostServiceImpl extends ServiceImpl<PostMapper, Post> implements Po
         baseMapper.delById(id);
 
         return true;
+    }
+
+    @Override
+    public List<PostDTO> pageAll() {
+        List<Post> posts = baseMapper.selectAll();
+        return getByUserList(posts);
+    }
+
+    public List<PostDTO> getByUserList(List<Post> posts) {
+        if (posts.isEmpty()) {
+            return new ArrayList<>(0);
+        }
+        UserDTO userDTO = userService.getCurrentUser();
+        List<PostDTO> dtoList = new ArrayList<>(posts.size());
+
+        List<Long> postIds = posts.stream().map(Post::getId).collect(toList());
+
+        // 1- get postImg and imgData
+        List<PostImg> postImgs = postImgService.selectByPostIds(postIds);
+        List<Long> postImgIds = postImgs.stream().map(PostImg::getFileId).collect(toList());
+        List<PostImgData> imgDataList;
+        if (!postImgs.isEmpty()) {
+            imgDataList = postImgDataService.listByIds(postImgIds);
+        } else {
+            imgDataList = new ArrayList<>();
+        }
+        Map<Long, List<PostImg>> imgMap = postImgs.stream().collect(groupingBy(PostImg::getPostId));
+
+        // 2- get like
+        Map<Long, List<PostLikes>> likesMap = postLikesService.selectByPostIds(postIds).stream().collect(groupingBy(PostLikes::getPostId));
+
+        // 3- get comment
+        List<PostComment> postComments = postCommentService.selectByPostIds(postIds);
+        Map<Long, List<PostCommentDTO>> commentDTOMap = postCommentService.buildCommentTree(postComments).stream().collect(groupingBy(dto -> dto.getPostComment().getPostId()));
+
+        // 4- get user
+        List<Long> userList = posts.stream().map(Post::getUserId).collect(toList());
+        Map<Long, User> userMap = userService.listByIds(userList).stream().collect(toMap(User::getId, Function.identity()));
+
+        posts.forEach(post -> {
+            // get postImg and imgData
+            List<Long> imgList = Optional.ofNullable(imgMap.get(post.getId())).orElseGet(ArrayList::new).stream().map(PostImg::getFileId).collect(toList());
+            List<PostImgData> dataList = imgDataList.stream().filter(data -> imgList.contains(data.getId())).collect(toList());
+
+            // get like and comment
+            List<PostLikes> postLikes = likesMap.get(post.getId());
+            List<PostCommentDTO> commentDTOs = commentDTOMap.get(post.getId());
+            int commentNum = 0;
+            if (commentDTOs != null) {
+                AtomicInteger countNum = new AtomicInteger();
+                commentDTOs.stream().map(PostCommentDTO::getChildren).forEach(a -> countNum.addAndGet(Optional.ofNullable(a).orElseGet(ArrayList::new).size()));
+                commentNum = countNum.get() + commentDTOs.size();
+            }
+
+            // get user
+            User user = userMap.get(post.getUserId());
+
+            PostDTO postDTO = new PostDTO();
+            postDTO
+                    .setUserId(post.getUserId())
+                    .setContent(post.getContent())
+                    .setImageDataIdList(imgList)
+                    .setImgDataList(dataList)
+                    .setUser(user)
+                    .setLikesNumber(postLikes == null ? 0 : postLikes.size())
+                    .setCommentNumber(commentNum)
+                    .setPostLikes(postLikes)
+                    .setPostComments(commentDTOs)
+                    .setLiked(Optional.ofNullable(postLikes).orElseGet(ArrayList::new).stream().anyMatch(l -> l.getUserId().equals(userDTO.getId())))
+                    .setId(post.getId())
+                    .setCreateTime(post.getCreateTime())
+                    .setUpdateTime(post.getUpdateTime());
+
+            dtoList.add(postDTO);
+        });
+        return dtoList;
+
     }
 
     public Post convertToEntity(PostDTO postDTO) {

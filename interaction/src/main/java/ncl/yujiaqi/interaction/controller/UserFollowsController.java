@@ -5,6 +5,8 @@ import io.swagger.annotations.ApiOperation;
 import ncl.yujiaqi.interaction.domain.entity.UserFollows;
 import ncl.yujiaqi.interaction.service.UserFollowsService;
 import ncl.yujiaqi.system.common.result.R;
+import org.apache.ibatis.annotations.Param;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,15 +28,15 @@ public class UserFollowsController {
     private UserFollowsService userFollowsService;
 
     @PostMapping(value = "/follow")
-    @ApiOperation(tags="follow" ,value = "follow user")
-    public R<UserFollows> add(Long followUserId){
+    @ApiOperation(tags = "follow", value = "follow user")
+    public R<UserFollows> add(@Param("followUserId") Long followUserId) {
         return R.success(userFollowsService.addById(followUserId));
     }
 
-     @PostMapping(value = "/unfollow")
-    @ApiOperation(tags="unfollow" ,value = "unfollow user")
-    public R cancel(Long followUserId){
-         userFollowsService.cancelById(followUserId);
+    @DeleteMapping(value = "/follow")
+    @ApiOperation(tags = "unfollow", value = "unfollow user")
+    public R cancel(@Param("followUserId") Long followUserId) {
+        userFollowsService.cancelById(followUserId);
         return R.success();
     }
 

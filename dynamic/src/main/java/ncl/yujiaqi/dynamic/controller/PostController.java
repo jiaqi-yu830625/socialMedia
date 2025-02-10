@@ -53,4 +53,9 @@ public class PostController {
         return R.success(postService.deleteById(id));
     }
 
+    @GetMapping(value = "/pageAll")
+    @ApiOperation(tags = "pageAll", value = "get all posts")
+    public R<List<PostDTO>> pageAll() {
+        return R.success(postService.pageAll());
+    }
 }

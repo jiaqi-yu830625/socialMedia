@@ -4,6 +4,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import ncl.yujiaqi.dynamic.domain.entity.PostComment;
 import ncl.yujiaqi.dynamic.service.PostCommentService;
+import ncl.yujiaqi.dynamic.domain.dto.CommentDTO;
 import ncl.yujiaqi.system.common.result.R;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,7 +18,7 @@ import javax.annotation.Resource;
  */
 @RestController
 @Api(value = "post comment table", tags = "post comment table")
-@RequestMapping("/post_comment")
+@RequestMapping("/comment")
 public class PostCommentController {
 
     @Resource
@@ -25,8 +26,8 @@ public class PostCommentController {
 
     @PostMapping(value = "/comment")
     @ApiOperation(tags = "comment", value = "comment")
-    public R<PostComment> addComment(Long postId, Long sourceId, String comment) {
-        return R.success(postCommentService.addComment(postId, sourceId, comment));
+    public R<PostComment> addComment(@RequestBody CommentDTO commentDTO) {
+        return R.success(postCommentService.addComment(commentDTO));
     }
 
     @DeleteMapping(value = "/delById/{id}")

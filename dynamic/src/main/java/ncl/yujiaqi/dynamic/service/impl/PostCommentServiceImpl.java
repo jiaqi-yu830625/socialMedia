@@ -1,13 +1,17 @@
 package ncl.yujiaqi.dynamic.service.impl;
 
+import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.collection.CollectionUtil;
 import ncl.yujiaqi.dynamic.domain.dto.CommentUserDTO;
 import ncl.yujiaqi.dynamic.domain.dto.PostCommentDTO;
+import ncl.yujiaqi.dynamic.domain.dto.PostCommentUserDTO;
 import ncl.yujiaqi.dynamic.domain.entity.PostComment;
 import ncl.yujiaqi.dynamic.mapper.PostCommentMapper;
 import ncl.yujiaqi.dynamic.service.PostCommentService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import ncl.yujiaqi.dynamic.domain.dto.CommentDTO;
 import ncl.yujiaqi.system.domain.dto.UserDTO;
+import ncl.yujiaqi.system.domain.entity.BaseEntity;
 import ncl.yujiaqi.system.domain.entity.User;
 import ncl.yujiaqi.system.service.UserService;
 import org.springframework.stereotype.Service;
@@ -15,6 +19,7 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import java.util.*;
 import java.util.function.Function;
+import java.util.stream.Collectors;
 
 import static java.util.stream.Collectors.groupingBy;
 import static java.util.stream.Collectors.toMap;
@@ -50,7 +55,7 @@ public class PostCommentServiceImpl extends ServiceImpl<PostCommentMapper, PostC
 
     @Override
     public List<PostComment> selectByPostIds(List<Long> postIds) {
-        if(postIds.isEmpty()){
+        if (postIds.isEmpty()) {
             return new ArrayList<>(0);
         }
         return baseMapper.selectByPostIds(postIds);
@@ -61,19 +66,20 @@ public class PostCommentServiceImpl extends ServiceImpl<PostCommentMapper, PostC
         if (CollectionUtil.isEmpty(comments)) {
             return new ArrayList<>(0);
         }
-        Map<Long, PostCommentDTO> commentMap = comments.stream()
-                .map(comment -> new PostCommentDTO(comment, null))
+        List<PostCommentUserDTO> commentUserDTOS = convertToDTO(comments);
+
+        Map<Long, PostCommentDTO> commentMap = commentUserDTOS.stream()
+                .map(dto -> new PostCommentDTO(dto, new ArrayList<>()))
                 .collect(toMap(dto -> dto.getPostComment().getId(), Function.identity()));
 
         // storage root comment
         List<PostCommentDTO> rootComments = new ArrayList<>();
 
         // group the child-comment
-        for (PostComment comment : comments) {
-            PostCommentDTO dto = commentMap.get(comment.getId());
-            Long parentId = dto.getPostComment().getParentCommentId();
-            if (parentId == null) {
-                rootComments.add(dto);
+        for (PostCommentUserDTO comment : commentUserDTOS) {
+            Long parentId = comment.getParentCommentId();
+            if (parentId == 0) {
+                rootComments.add(commentMap.get(comment.getId()));
             } else {
                 // add children
                 PostCommentDTO parent = commentMap.get(parentId);
@@ -110,11 +116,29 @@ public class PostCommentServiceImpl extends ServiceImpl<PostCommentMapper, PostC
     }
 
     @Override
-    public PostComment addComment(Long postId, Long sourceId, String comment) {
+    public PostComment addComment(CommentDTO commentDTO) {
         UserDTO userDTO = userService.getCurrentUser();
-        PostComment postComment = new PostComment(userDTO.getId(), postId, comment, sourceId);
+        PostComment postComment = new PostComment(userDTO.getId(), commentDTO.getPostId(), commentDTO.getComment(), commentDTO.getSourceId());
         add(postComment);
 
         return postComment;
+    }
+
+    public List<PostCommentUserDTO> convertToDTO(List<PostComment> postComments) {
+        List<PostCommentUserDTO> postCommentUserDTOList = new ArrayList<>(postComments.size());
+
+        List<Long> commentUserIds = postComments.stream().map(PostComment::getUserId).collect(Collectors.toList());
+        Map<Long, User> userMap = userService.listByIds(commentUserIds).stream().collect(toMap(User::getId, Function.identity()));
+
+        postComments.forEach(postComment -> {
+            PostCommentUserDTO dto = new PostCommentUserDTO();
+            BeanUtil.copyProperties(postComment, dto);
+            User user = userMap.get(postComment.getUserId());
+            if (user != null) {
+                dto.setCommentUserDTO(new CommentUserDTO(postComment.getUserId(), user.getUsername(), user.getAvatar()));
+            }
+            postCommentUserDTOList.add(dto);
+        });
+        return postCommentUserDTOList;
     }
 }

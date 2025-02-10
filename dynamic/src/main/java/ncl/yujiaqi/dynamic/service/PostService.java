@@ -21,11 +21,11 @@ public interface PostService extends IService<Post>  {
 
     Boolean delete(Long id);
 
-    List<PostDTO> getByUserId(Long userId);
-
     List<PostDTO> pageByUserId(Long userId);
 
     PostDTO selectById(Long id);
 
     Boolean deleteById(Long id);
+
+    List<PostDTO> pageAll();
 }

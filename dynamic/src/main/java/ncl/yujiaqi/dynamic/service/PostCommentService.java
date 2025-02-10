@@ -4,6 +4,7 @@ import ncl.yujiaqi.dynamic.domain.dto.CommentUserDTO;
 import ncl.yujiaqi.dynamic.domain.dto.PostCommentDTO;
 import ncl.yujiaqi.dynamic.domain.entity.PostComment;
 import com.baomidou.mybatisplus.extension.service.IService;
+import ncl.yujiaqi.dynamic.domain.dto.CommentDTO;
 
 import java.util.List;
 
@@ -32,5 +33,5 @@ public interface PostCommentService extends IService<PostComment>  {
 
     void deleteByPostId(Long postId);
 
-    PostComment addComment(Long postId, Long sourceId, String comment);
+    PostComment addComment(CommentDTO commentDTO);
 }

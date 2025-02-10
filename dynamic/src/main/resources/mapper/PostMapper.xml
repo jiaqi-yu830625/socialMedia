@@ -24,5 +24,20 @@
         where deleted = 0
           and user_id = #{userId}
     </select>
+    <select id="selectAll" resultType="ncl.yujiaqi.dynamic.domain.entity.Post">
+        select *
+        from dyn_post
+        where deleted = 0
+    </select>
+
+    <select id="getByUserList" resultType="ncl.yujiaqi.dynamic.domain.entity.Post">
+        select *
+        from dyn_post
+        where deleted = 0
+        and user_id in
+        <foreach collection="userIds" item="userId" index="userId" open="(" separator="," close=")">
+            #{userId}
+        </foreach>
+    </select>
 
 </mapper>

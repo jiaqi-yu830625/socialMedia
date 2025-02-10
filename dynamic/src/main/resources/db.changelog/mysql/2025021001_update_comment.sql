@@ -1,0 +1,1 @@
+alter table `dyn_post_comment` MODIFY column comment VARCHAR (255) not null COMMENT 'comment';

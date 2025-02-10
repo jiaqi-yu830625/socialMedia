@@ -46,7 +46,7 @@ public class PostDTO extends BaseEntity {
     private Integer commentNumber;
     private List<PostLikes> postLikes;
     private List<PostCommentDTO> postComments;
-    private List<CommentUserDTO> commentUsers;
+    private boolean isLiked = false;
 
     public PostDTO(Long id, Long userId, User user, String content, List<Long> imageDataIdList, List<PostImgData> imgDataList, Date createTime) {
         super.setId(id);

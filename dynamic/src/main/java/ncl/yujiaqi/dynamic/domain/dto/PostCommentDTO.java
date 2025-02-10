@@ -20,7 +20,7 @@ import java.util.List;
 @Accessors(chain = true)
 public class PostCommentDTO {
 
-    private PostComment postComment;
+    private PostCommentUserDTO postComment;
     // storage children comment
-    private List<PostComment> children = new ArrayList<>();
+    private List<PostCommentUserDTO> children = new ArrayList<>();
 }

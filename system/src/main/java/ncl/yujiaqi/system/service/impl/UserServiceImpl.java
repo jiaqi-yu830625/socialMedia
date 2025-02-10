@@ -138,6 +138,16 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         return userDTO;
     }
 
+    @Override
+    public User getUserById(Long id) {
+        User user = getById(id);
+        if (user == null) {
+            throw SMException.build(ResultEnum.DATA_NOT_FOUND, "user not exist!");
+        }
+        user.setPassword(null);
+        return user;
+    }
+
     public User selectByAccount(String account) {
         User byEmail = userMapper.selectByEmail(account);
         User byPhone = userMapper.selectByEmail(account);

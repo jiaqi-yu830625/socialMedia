@@ -28,6 +28,12 @@ public class UserController {
     @Resource
     private UserService userService;
 
+    @GetMapping(value = "/getById/{id}")
+    @ApiOperation(tags = "get user by id", value = "get user by id")
+    public R<User> getById(@PathVariable("id") Long id) {
+        return R.success(userService.getUserById(id));
+    }
+
     @PostMapping(value = "/register")
     @ApiOperation(tags = "create user", value = "create user info")
     public R<User> addUser(@Validated @RequestBody User user, BindingResult result) {
