@@ -30,6 +30,9 @@ This project includes not only back-end API, but also a Vue front-end, where use
 In addition, the front-end project was not my result, the pages was written by my boyfriend who was used to a front-end engineer.
 Overall, this program still contain loads of bugs during short coding period, I will keep updating though.
 
+There is a serious bug which i didn't fix is that when user comment a post, he only can enter number instead of a text.
+
+
 back-end:
 1. Change the mysql username and password in application.yml (launcher/src/main/resources/application.yml)
    
