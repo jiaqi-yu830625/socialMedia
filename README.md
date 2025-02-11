@@ -51,7 +51,7 @@ front-end:
 2. npm i
 3. npm start serve
 
-please login with following account:
+# please login with following account:
 account: user3@163.com
 password: securePassword123
 
