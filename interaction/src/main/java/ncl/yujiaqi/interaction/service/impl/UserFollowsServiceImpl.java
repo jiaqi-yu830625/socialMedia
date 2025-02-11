@@ -1,6 +1,7 @@
 package ncl.yujiaqi.interaction.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import ncl.yujiaqi.interaction.domain.dto.UserFollowDTO;
 import ncl.yujiaqi.interaction.domain.entity.UserFollows;
 import ncl.yujiaqi.interaction.mapper.UserFollowsMapper;
 import ncl.yujiaqi.interaction.service.UserFollowsService;
@@ -12,6 +13,10 @@ import ncl.yujiaqi.system.service.UserService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 /**
  * user follows table
@@ -64,5 +69,24 @@ public class UserFollowsServiceImpl extends ServiceImpl<UserFollowsMapper, UserF
             delete(userFollows.getId());
         }
         return true;
+    }
+
+    @Override
+    public UserFollowDTO getFollowsByUserId(Long userId) {
+        UserFollowDTO userFollowDTO = new UserFollowDTO();
+        userFollowDTO.setUserId(userId);
+
+        List<UserFollows> userFollows = baseMapper.selectByUserId(userId);
+        List<Long> followerIds = Optional.ofNullable(userFollows).orElseGet(ArrayList::new).stream().map(UserFollows::getFollowerId).collect(Collectors.toList());
+        if (followerIds.isEmpty()) {
+            return userFollowDTO;
+        }
+        UserDTO loginUser = userService.getCurrentUser();
+
+        List<UserDTO> userDTOS = userService.listByIds(followerIds).stream().map(user -> userService.convert(user)).collect(Collectors.toList());
+        userFollowDTO.setFollowUsers(userDTOS)
+                .setFollowerIds(userDTOS.stream().map(UserDTO::getId).collect(Collectors.toList()))
+                .setFollowed(userDTOS.stream().map(UserDTO::getId).anyMatch(id -> loginUser.getId().equals(id)));
+        return userFollowDTO;
     }
 }

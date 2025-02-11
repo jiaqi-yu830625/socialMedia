@@ -3,6 +3,7 @@ package ncl.yujiaqi.interaction.controller;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import ncl.yujiaqi.dynamic.service.PostLikesService;
+import ncl.yujiaqi.dynamic.domain.dto.LikeDTO;
 import ncl.yujiaqi.system.common.result.R;
 import org.springframework.web.bind.annotation.*;
 
@@ -33,6 +34,12 @@ public class PostLikesController {
     public R unlikePostByPostId(@PathVariable("postId") Long postId) {
         postLikesService.deleteByUserAndPost(postId);
         return R.success();
+    }
+
+    @GetMapping(value = "/countLikesNum/{userId}")
+    public R<LikeDTO> getLikeNumber(@PathVariable("userId") Long userId){
+        return R.success(postLikesService.getLikeNumber(userId));
+
     }
 
 }

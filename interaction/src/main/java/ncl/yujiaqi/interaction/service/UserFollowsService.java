@@ -1,6 +1,7 @@
 package ncl.yujiaqi.interaction.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import ncl.yujiaqi.interaction.domain.dto.UserFollowDTO;
 import ncl.yujiaqi.interaction.domain.entity.UserFollows;
 
 /**
@@ -21,4 +22,6 @@ public interface UserFollowsService extends IService<UserFollows> {
     UserFollows addById(Long followUserId);
 
     Boolean cancelById(Long followUserId);
+
+    UserFollowDTO getFollowsByUserId(Long userId);
 }

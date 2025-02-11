@@ -6,6 +6,7 @@ import io.swagger.annotations.ApiOperation;
 import ncl.yujiaqi.system.common.enums.ResultEnum;
 import ncl.yujiaqi.system.common.exception.SMException;
 import ncl.yujiaqi.system.common.result.R;
+import ncl.yujiaqi.system.domain.dto.UserDTO;
 import ncl.yujiaqi.system.domain.entity.User;
 import ncl.yujiaqi.system.service.UserService;
 import org.springframework.data.repository.query.Param;

@@ -1,5 +1,6 @@
 package ncl.yujiaqi.dynamic.service;
 
+import ncl.yujiaqi.dynamic.domain.dto.LikeDTO;
 import ncl.yujiaqi.dynamic.domain.entity.PostLikes;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -29,4 +30,6 @@ public interface PostLikesService extends IService<PostLikes>  {
     PostLikes addByPostId(Long postId);
 
     void deleteByUserAndPost(Long postId);
+
+    LikeDTO getLikeNumber(Long userId);
 }

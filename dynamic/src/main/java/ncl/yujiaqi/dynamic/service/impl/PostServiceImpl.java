@@ -88,7 +88,6 @@ public class PostServiceImpl extends ServiceImpl<PostMapper, Post> implements Po
     }
 
     @Override
-    @Transactional
     public Boolean deleteById(Long id) {
         // check post's user valid
         Long userId = userService.getCurrentUser().getId();

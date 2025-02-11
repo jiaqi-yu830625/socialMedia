@@ -46,4 +46,5 @@ public class UserDTO extends BaseEntity {
     private String bio;
 
     private List<Role> roles;
+    private Integer likesNumber;
 }

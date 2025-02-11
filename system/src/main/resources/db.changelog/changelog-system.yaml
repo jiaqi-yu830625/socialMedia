@@ -25,3 +25,12 @@ databaseChangeLog:
             encoding: utf8
             path: classpath:db.changelog/mysql/2025020701_modify.sql
       comment: modify tables
+
+  - changeSet:
+      id: 2025021101_insert
+      author: yujiaqi
+      changes:
+        - sqlFile:
+            encoding: utf8
+            path: classpath:db.changelog/mysql/2025021101_insert.sql
+      comment: insert example user

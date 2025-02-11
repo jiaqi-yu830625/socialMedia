@@ -1,6 +1,8 @@
 package ncl.yujiaqi.dynamic.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import ncl.yujiaqi.dynamic.domain.dto.LikeDTO;
+import ncl.yujiaqi.dynamic.domain.dto.PostDTO;
 import ncl.yujiaqi.dynamic.domain.entity.PostLikes;
 import ncl.yujiaqi.dynamic.mapper.PostLikesMapper;
 import ncl.yujiaqi.dynamic.service.PostLikesService;
@@ -13,6 +15,7 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import static java.util.stream.Collectors.toList;
@@ -50,7 +53,7 @@ public class PostLikesServiceImpl extends ServiceImpl<PostLikesMapper, PostLikes
 
     @Override
     public List<PostLikes> selectByPostIds(List<Long> postIds) {
-        if(postIds.isEmpty()){
+        if (postIds.isEmpty()) {
             return new ArrayList<>(0);
         }
         return baseMapper.selectByPostIds(postIds);
@@ -94,5 +97,19 @@ public class PostLikesServiceImpl extends ServiceImpl<PostLikesMapper, PostLikes
         if (originLikes.size() > 0) {
             baseMapper.deleteBatchIds(originLikes.stream().map(PostLikes::getId).collect(toList()));
         }
+    }
+
+    @Override
+    public LikeDTO getLikeNumber(Long userId) {
+        List<PostDTO> postDTOS = postService.pageByUserId(userId);
+        int sum = 0;
+        if (!postDTOS.isEmpty()) {
+            sum = postDTOS.stream().map(PostDTO::getLikesNumber).reduce(0, Integer::sum);
+        }
+        LikeDTO likeDTO = new LikeDTO();
+        likeDTO
+                .setUserId(userId)
+                .setLikesNumber(sum);
+        return likeDTO;
     }
 }
