@@ -57,7 +57,12 @@ public class UserFollowsServiceImpl extends ServiceImpl<UserFollowsMapper, UserF
         UserDTO userDTO = userService.getCurrentUser();
         Long userId = userDTO.getId();
 
-        return new UserFollows(userId, followUserId);
+        UserFollows userFollows = new UserFollows(followUserId, userId);
+        if (followUserId.equals(userId)) {
+            return userFollows;
+        }
+
+        return add(userFollows);
     }
 
     @Override
@@ -84,9 +89,14 @@ public class UserFollowsServiceImpl extends ServiceImpl<UserFollowsMapper, UserF
         UserDTO loginUser = userService.getCurrentUser();
 
         List<UserDTO> userDTOS = userService.listByIds(followerIds).stream().map(user -> userService.convert(user)).collect(Collectors.toList());
+        boolean checkFollowed = userDTOS.stream().map(UserDTO::getId).anyMatch(id -> loginUser.getId().equals(id));
+        if (userId.equals(loginUser.getId())) {
+            checkFollowed = true;
+        }
+
         userFollowDTO.setFollowUsers(userDTOS)
                 .setFollowerIds(userDTOS.stream().map(UserDTO::getId).collect(Collectors.toList()))
-                .setFollowed(userDTOS.stream().map(UserDTO::getId).anyMatch(id -> loginUser.getId().equals(id)));
+                .setFollowed(checkFollowed);
         return userFollowDTO;
     }
 }
