@@ -51,6 +51,10 @@ front-end:
 2. npm i
 3. npm start serve
 
+please login with following account:
+account: user3@163.com
+password: securePassword123
+
 # link in github
 back-end: https://github.com/jiaqi-yu830625/socialMedia
 front-end: https://github.com/jiaqi-yu830625/socialMedia-vue
